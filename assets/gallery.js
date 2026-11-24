@@ -17,6 +17,10 @@
   const search = byId('search');
   const type = byId('type');
   const journal = byId('journal');
+  const filterPanel = byId('figure-filters');
+  const filterSummary = filterPanel.querySelector('summary');
+  const activeFilters = byId('active-filters');
+  const chipTemplate = byId('filter-chip').content.firstElementChild;
   const sort = byId('sort');
   const reset = byId('reset');
   const previousPage = byId('previous-page');
@@ -78,14 +82,18 @@
     detailIndex = index;
     byId('detail-label').textContent = `${figure.category} · ${figure.label}`;
     byId('detail-position').textContent = `${index + 1} / ${results.length}`;
-    byId('detail-image').src = imagePath(figure);
+    const preview = byId('detail-preview');
+    loadPreview(preview, figure);
     byId('detail-image').alt = figure.figure_title;
-    byId('detail-preview').href = imagePath(figure);
+    preview.href = imagePath(figure);
     byId('detail-title').textContent = figure.figure_title;
     byId('detail-paper').textContent = figure.paper;
     const source = [figure.journal, figure.version].filter(Boolean).join(' ');
-    byId('detail-citation').textContent = [figure.author, source, figure.year, figure.doi && `DOI ${figure.doi}`]
+    byId('detail-citation').textContent = [figure.author, source, figure.year]
       .filter(Boolean).join(' · ');
+    byId('detail-doi').hidden = !figure.doi;
+    byId('detail-doi-link').textContent = figure.doi || '';
+    setDetailLink('detail-doi-link', figure.doi && (figure.doi_url || `https://doi.org/${figure.doi}`));
     byId('detail-team').textContent = figure.team || '';
     byId('detail-team').hidden = !figure.team;
     byId('detail-rights').textContent = figure.rights_note || '';
@@ -96,7 +104,10 @@
     setDetailLink('original-link', figure.original);
     byId('original-link-label').textContent = figure.original_label || (figure.pdf_crop ? '原图所在页' : '查看原图');
     setDetailLink('license-link', figure.license);
+    byId('license-link').textContent = figure.license === 'https://creativecommons.org/licenses/by/4.0/'
+      ? '文章许可 · CC BY 4.0' : '文章许可';
     setDetailLink('license-evidence', figure.license_evidence);
+    byId('detail-license').hidden = !figure.license && !figure.license_evidence && !figure.rights_note;
     previousFigure.disabled = index === 0;
     nextFigure.disabled = index === results.length - 1;
     if (!dialog.open) dialog.showModal();
@@ -111,20 +122,29 @@
     else link.removeAttribute('href');
   }
 
+  function loadPreview(container, figure) {
+    const image = container.querySelector('img');
+    const placeholder = container.querySelector('.preview-error');
+    image.hidden = false;
+    placeholder.hidden = true;
+    image.onerror = () => {
+      image.hidden = true;
+      placeholder.hidden = false;
+    };
+    image.src = imagePath(figure);
+  }
+
   function makeCard(figure, index) {
     const card = cardTemplate.cloneNode(true);
     const preview = card.querySelector('.preview');
     preview.setAttribute('aria-label', `查看 ${figure.label}：${figure.figure_title}`);
     preview.addEventListener('click', () => showFigure(index));
-    preview.querySelector('img').src = imagePath(figure);
+    loadPreview(preview, figure);
     card.querySelector('.card-topic').textContent = figure.category;
     card.querySelector('.card-label').textContent = figure.label;
     const title = card.querySelector('.card-title');
     title.textContent = figure.figure_title;
     title.title = figure.figure_title;
-    const paper = card.querySelector('.card-paper');
-    paper.textContent = figure.paper;
-    paper.title = figure.paper;
     const source = card.querySelector('.card-journal');
     source.textContent = [figure.journal, figure.year, figure.local_only && '本地'].filter(Boolean).join(' · ');
     source.title = source.textContent;
@@ -143,6 +163,23 @@
     byId('page-count').textContent = `${page} / ${pageCount}`;
     previousPage.disabled = page === 1;
     nextPage.disabled = page >= pageCount;
+  }
+
+  function renderActiveFilters() {
+    const chips = [type, journal].filter(control => control.value).map(control => {
+      const chip = chipTemplate.cloneNode(true);
+      const label = control.selectedOptions[0].textContent;
+      chip.querySelector('span').textContent = label;
+      chip.setAttribute('aria-label', `清除筛选：${label}`);
+      chip.addEventListener('click', () => {
+        control.value = '';
+        applyFilters();
+        (activeFilters.firstElementChild || filterSummary).focus();
+      });
+      return chip;
+    });
+    activeFilters.replaceChildren(...chips);
+    activeFilters.hidden = chips.length === 0;
   }
 
   function applyFilters() {
@@ -167,6 +204,7 @@
     reset.disabled = !topic && !query && !selectedType && !selectedJournal && sort.value === 'curated';
     notice.hidden = results.length > 0;
     notice.textContent = '没有符合当前条件的图例。';
+    renderActiveFilters();
     page = 1;
     renderPage();
   }
@@ -180,6 +218,18 @@
 
   search.addEventListener('input', applyFilters);
   for (const control of [type, journal, sort]) control.addEventListener('change', applyFilters);
+  filterPanel.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && filterPanel.open) {
+      filterPanel.open = false;
+      filterSummary.focus();
+    }
+  });
+  filterPanel.addEventListener('focusout', event => {
+    if (event.relatedTarget && !filterPanel.contains(event.relatedTarget)) filterPanel.open = false;
+  });
+  document.addEventListener('click', event => {
+    if (filterPanel.open && !filterPanel.contains(event.target)) filterPanel.open = false;
+  });
   reset.addEventListener('click', () => {
     topic = '';
     search.value = type.value = journal.value = '';

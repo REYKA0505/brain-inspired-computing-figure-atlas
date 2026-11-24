@@ -364,8 +364,10 @@ def write_resources(figures):
             thumb = html.escape(selected[0]["image"])
             topics.append(
                 f'<a class="resource-theme" href="index.html?topic={quote(category)}">'
-                f'<img src="{thumb}" alt="" width="70" height="44" loading="lazy">'
-                f'<span>{html.escape(category)}</span><span class="topic-count">{len(selected)} 张</span></a>'
+                f'<img src="{thumb}" alt="" width="240" height="120" loading="lazy" decoding="async">'
+                f'<span class="theme-label"><span>{html.escape(category)}</span>'
+                f'<span class="topic-count">{len(selected)} 张</span>'
+                '<svg class="icon" aria-hidden="true"><use href="#icon-link"/></svg></span></a>'
             )
     markdown.extend(["## 来源与许可", "", "外部图集和素材站中的作品许可见原始页面。[来源清单](../data/sources.json) · [选录清单](../data/curated-figures.json)", ""])
     (DOCS_DIR / "resources.md").write_text("\n".join(markdown), encoding="utf-8")
