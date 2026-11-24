@@ -340,17 +340,7 @@ def write_resources(figures):
         menu.append(f'<a href="#{section_id}">{title}</a>')
         section = [f'<section id="{section_id}" class="resource-section">', f"<h2>{title}</h2>"]
         markdown.extend([f"## {group['title']}", ""])
-        if section_id == "papers":
-            section.extend([
-                '<div class="resource-shortcuts">',
-                '<a href="index.html?journal=arXiv">图谱中的 arXiv 图件</a>',
-                '<a href="index.html?journal=bioRxiv">图谱中的 bioRxiv 图件</a>',
-                "</div>",
-            ])
-            markdown.extend([
-                "[arXiv 图件](../index.html?journal=arXiv) · [bioRxiv 图件](../index.html?journal=bioRxiv)", "",
-            ])
-        elif section_id == "illustrations":
+        if section_id == "illustrations":
             markdown.extend(["本节主要收录示意插画和图标。", ""])
         markdown.extend(["| 资源 | 收录内容 |", "| --- | --- |"])
         section.append('<ul class="resource-list">')

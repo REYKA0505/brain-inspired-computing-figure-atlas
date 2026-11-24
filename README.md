@@ -8,7 +8,7 @@
 
 - **网页图库**　[打开在线图库](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/)。下载仓库后，也可在浏览器打开 [index.html](index.html) 离线筛选和放大图例。
 - **Obsidian 图墙**　在 Obsidian 中打开项目目录，从[图墙索引](docs/index.md)按研究主题读图。
-- **站外资源**　[打开在线资源导航](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/resources.html)浏览论文图集、科研插画和预印本。仓库内也提供 [Markdown 资源索引](docs/resources.md)。
+- **站外资源**　[打开在线资源导航](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/resources.html)浏览论文图集和科研插画。仓库内也提供 [Markdown 资源索引](docs/resources.md)。
 - **论文投递**　登录 GitHub 后填写论文标题、DOI 或链接中的任意一项。[投递论文](https://github.com/REYKA0505/brain-inspired-computing-figure-atlas/issues/new?template=paper-suggestion.yml)
 
 ## 目录
