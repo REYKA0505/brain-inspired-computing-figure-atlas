@@ -1,0 +1,1216 @@
+[
+  {
+    "source_id": "bioRxiv-2026.04.14.718499v1",
+    "category": "类脑计算与模型",
+    "paper": "Learning to select computations in recurrent neural circuits",
+    "journal": "bioRxiv",
+    "year": "2026",
+    "author": "Chen et al.",
+    "team": "New York University / Columbia University / University of Chicago / UC Berkeley / Rutgers University",
+    "doi": "10.64898/2026.04.14.718499",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.biorxiv.org/content/10.64898/2026.04.14.718499v1",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Model schematic",
+        "caption": "Model schematic. The agent consists of an RNN that receives observations from the external environment and selects actions. The actions can be either physical (“act”) or mental (“think”) actions. Physical actions alter the environmental state. Mental actions leave the environmental state unchanged and instead query an information generator, which returns decision-relevant information that is appended to the agent’s input at the subsequent time step.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/59cc/13104915/9ca24bc1330c/nihpp-2026.04.14.718499v1-f0001.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104915/#F1"
+      },
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "Comparing model dynamics with macaque orbitofrontal neural activity",
+        "caption": "Meta-RL agent reproduces neural dynamics in macaque orbitofrontal cortex. (A–B) Posterior probabilities from the LDA decoder for chosen (red), unchosen (blue) and unavailable options (gray, average of both unavailable options), shown for 4 example trials. (C) Number of decoded value states for chosen and unchosen options. (D) Number of transitions between decoded states as a function of chosen value. (E) Number of transitions in correct versus error trials. (F–G) Temporal evolution of value-subspace representation in macaques (F) and the agent (G). Dimensions 1 and 2 are orthogonal bases within the value subspace. Each dot shows average neural activity for a given pair of values of the first- and second-viewed options. The first and second rows are colored by the value of the first- and second-viewed options, respectively. Arrows indicate the value gradient’s direction and magnitude. Macaque neural activity is aligned to the onset of the second fixation (approximately 200 ms after the first fixation); agent hidden activity is aligned to trial onset. Panel (F) shows an example session, and panel (G) shows an example agent. (H) Schematic of value gradient expansion. Decodability increases as neural activity between values become more separable. (I) Decoding performance of option value from the value subspace over time. (J) Schematic of value gradient rotation θ indicates rotation angle. (K) Rotation angle of the value gradient over time. Rotation angle is baseline-corrected relative to first-viewed option’s value gradient at t = 0 ms for macaques and t = 1 for the agent. Error bars show standard errors across sessions or random seeds.",
+        "tags": [
+          "曲线 / 时间序列",
+          "散点 / 降维"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/59cc/13104915/7e13f73f328a/nihpp-2026.04.14.718499v1-f0003.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104915/#F3"
+      },
+      {
+        "id": "F4",
+        "label": "Fig. 4",
+        "figure_title": "Meta-RL planning on a tree-structured task",
+        "caption": "Meta-RL agent learns a human-like planning strategy. (A) Task interface. A visually-displayed decision tree is shown where eleven states are arranged on a circle, each associated with a certain reward. The current state is highlighted in blue and possible actions are indicated by arrows. Participants aim to select a path that maximizes cumulative reward by clicking on states. Each state’s reward is only revealed while the state is fixated. The bar on the right indicates the time left for the trial. (B) An example chosen path indicated by red arrows. (C) An example fixation sequence prior to the first action of the trial. Numbers indicate the order of fixations. (D) The average number of fixations or queries per state at different depths. Dashed lines indicate chance: the average number of fixations divided by the number of states (eleven). (E) Proportions of transitions (saccades) from the currently attended state (marked by an eye) to nearby states. The child proportions correspond to a single state (e.g. 36% of human transitions go to a child). (F) Illustration of frontier fixation/query. The red arrow indicates the next attended frontier state, and the red rectangle marks the path leading to the frontier state. (G) Probability of attending to a frontier state as a function of its path value (the sum of rewards on the path to that state). (H–I) Change in decision logit (H) and Q value (I) corresponding to a queried state and its ancestors, grouped by the queried state’s reward. Logits are normalized within sibling pairs to reflect the relative preference for a state over its sibling. Logits and Q values are baseline-corrected by subtracting the value immediately before the query (t = −1). ( J–K) Change in the parent’s decision logit (J) and Q value (K) grouped by the revealed reward and the sibling’s value. K shows predictions from Bellman backups (Methods). Error bars show standard errors across participants or random seeds (and are often too small to be visible).",
+        "tags": [
+          "示意图 / 方法",
+          "曲线 / 时间序列",
+          "统计 / 分布"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/59cc/13104915/22c044590334/nihpp-2026.04.14.718499v1-f0004.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104915/#F4"
+      }
+    ]
+  },
+  {
+    "source_id": "bioRxiv-458570v1",
+    "category": "类脑计算与模型",
+    "paper": "Local online learning in recurrent networks with random feedback",
+    "journal": "bioRxiv",
+    "year": "2018",
+    "author": "James M. Murray",
+    "team": "Columbia University / Zuckerman Institute",
+    "doi": "10.1101/458570",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://ctn.zuckermaninstitute.columbia.edu/sites/ctn.zuckermaninstitute.columbia.edu/files/content/Publications/2018/Murray%2C%20Local%20Online%20Learning%20in%20Recurrent%20Networks%20with%20Random%20Feedback.pdf",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Random-feedback learning in a recurrent neural network",
+        "caption": "Schematic illustration of a recurrent neural network. The network receives time-dependent input x(t), and its synaptic weights are trained so that the output y(t) matches a target function y∗(t). The projection of the error ε(t) with feedback weights is used for learning the input weights and recurrent weights.",
+        "tags": [
+          "示意图 / 方法",
+          "网络 / 连接组"
+        ],
+        "original": "https://ctn.zuckermaninstitute.columbia.edu/sites/ctn.zuckermaninstitute.columbia.edu/files/content/Publications/2018/Murray%2C%20Local%20Online%20Learning%20in%20Recurrent%20Networks%20with%20Random%20Feedback.pdf#page=2",
+        "paper_url": "https://doi.org/10.1101/458570",
+        "pdf_crop": {
+          "page": 2,
+          "box": [
+            140,
+            72,
+            472,
+            190
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "bioRxiv-2023.10.10.561588v1",
+    "category": "类脑计算与模型",
+    "paper": "Training biologically plausible recurrent neural networks on cognitive tasks with long-term dependencies",
+    "journal": "bioRxiv",
+    "year": "2023",
+    "author": "Soo et al.",
+    "team": "University of Cambridge / New York University",
+    "doi": "10.1101/2023.10.10.561588",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://europepmc.org/articles/PMC10592728",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Training challenges in biologically plausible recurrent networks",
+        "caption": "Limitations of training biologically plausible RNNs for tasks in neuroscience. A. Overview of RNN model. B. RNN performance on three cognitive tasks against the number of training steps. RNNs require more training steps in order to successfully perform tasks that require the learning of long-term dependencies. C. Number of training steps required to train biologically plausible RNNs to attain 0.99 performance on 16 standard tasks [16] in neuroscience (Appendix D).",
+        "tags": [
+          "示意图 / 方法",
+          "曲线 / 时间序列"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f70e/10592728/16d882481e85/nihpp-2023.10.10.561588v1-f0001.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10592728/#F1"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Recurrent training algorithms for long-term dependencies",
+        "caption": "Proposed algorithms for training RNNs to perform tasks requiring long-term dependencies. A. Base model: simulating the RNN using Euler’s method and training by backpropagation through time. B. Coarsened discretization (CD): training in the same way as the base model, except with a larger discretized time step (by a factor of θ) and then gradually reducing θ as training progresses until θ=1. C. Skip connections through time (SCTT): implementing a skip connection every θ time steps which takes a weighted average of the hidden state on the two ends of the skip connection with weights β and 1−β, and then gradually increasing β until β=1. D. Dynamics-aligned skip connections (DASC): SCTTs but with a CD step before taking the weighted average.",
+        "tags": [
+          "示意图 / 方法",
+          "网络 / 连接组"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f70e/10592728/0e0eb1bf529b/nihpp-2023.10.10.561588v1-f0002.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10592728/#F2"
+      },
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "Effects of training algorithms on network dynamics",
+        "caption": "Effects of proposed algorithms on network dynamics. A. Diagram of proposed dynamics in activity subspace over time. Coarsened discretization (CD, red) typically results in a large discretization error. Skip connections through time (SCTT, green) result in an attenuation in dynamics. Dynamics-aligned skip connections (DASC, blue) make its hidden-states more aligned with the true dynamics compared to CD. B. Normalized mean-squared error between true and modified dynamics for β=0.5,θ∈{5,10,20,30,40}. Shaded area (θ>20) implies a time discretization greater than the time constant. C. Difference in task performance computed between modified and true dynamics.",
+        "tags": [
+          "示意图 / 方法",
+          "曲线 / 时间序列"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f70e/10592728/d2bee2ad336d/nihpp-2023.10.10.561588v1-f0003.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10592728/#F3"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2404.14964v3",
+    "category": "类脑计算与模型",
+    "paper": "Elucidating the theoretical underpinnings of surrogate gradient learning in spiking neural networks",
+    "journal": "arXiv",
+    "year": "2024",
+    "author": "Gygax & Zenke",
+    "team": "Friedrich Miescher Institute / University of Basel",
+    "doi": "10.48550/arXiv.2404.14964",
+    "version": "v3",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2404.14964v3",
+    "figures": [
+      {
+        "id": "F4",
+        "label": "Fig. 4",
+        "figure_title": "Surrogate gradients in a multilayer network",
+        "caption": "Figure 4: SG deviate from actual gradients in differentiable MLP. (A) Schematic of a differentiable network (left) with sigmoid activations (right) for which we compute an SD using the derivative of a flatter sigmoid (yellow) in contrast to the actual activation (black). (B) Top row: Network output (solid gray), smoothed network output (dashed), and integrated SD (yellow) as a function of w. The triangles on the x-axis indicate the minimum of the corresponding curves. Bottom row: Derivatives of the top row. Left and right correspond to a flatter (βSG=15) and a steeper (βSG=25) SD, see Table 1 for network parameters. Note that the actual derivative and the surrogate can have opposite signs. (C) Heatmap of the optimization landscape along v1 and v2 for different βSG values (top to bottom). While the actual gradient can be asymptotically zero (see yellow dot, bottom), the SD provides a descent direction (yellow arrow), thereby enabling learning (top and middle).",
+        "tags": [
+          "示意图 / 方法",
+          "热图 / 矩阵"
+        ],
+        "original": "https://arxiv.org/html/2404.14964v3/04_sigmoid_MLP.png",
+        "paper_url": "https://arxiv.org/html/2404.14964v3#S4.F4"
+      },
+      {
+        "id": "F5",
+        "label": "Fig. 5",
+        "figure_title": "A closed-path test of surrogate gradients",
+        "caption": "Figure 5: SG are not gradients. (A) Heat map of the network output while moving along two random directions in the parameter space of the example network with step activation (top) and sigmoid activation (bottom) (see Fig. 4 A). The circles indicate a closed integration path through parameter space, starting at the arrowhead. (B) Integral values of SD as a function of the angle along the closed circular path shown in (A). Different shades of yellow correspond to different values of βSG. The blue lines correspond to the actual output of the network with step activation function (solid) or sigmoid activation (dashed). The integrated actual derivative of the network with sigmoid activation matches the output (dashed line) and is thus not visible in the plot. (C) Absolute difference between actual loss value and integrated SD as function of the number of integration steps. The numerical integrals converge to finite values. Thus the observed difference is not an artifact of the numerical integration.",
+        "tags": [
+          "热图 / 矩阵",
+          "曲线 / 时间序列"
+        ],
+        "original": "https://arxiv.org/html/2404.14964v3/05_SG_are_not_grad_of_loss.png",
+        "paper_url": "https://arxiv.org/html/2404.14964v3#S4.F5"
+      },
+      {
+        "id": "F7",
+        "label": "Fig. 7",
+        "figure_title": "Spiking activity and classification performance",
+        "caption": "Figure 7: SG can successfully train stochastic CSNN. (A) Snapshot of network activity for two correctly classified sample inputs from the SHD dataset. Top: readout unit activity over time, the colored line indicates the activity of the unit that corresponds to the correct class. Below: Spike raster plots of the three convolutional hidden layers. The spike raster plots of the inputs are shown at the bottom in red and gray. Time is on the x-axis, the neuron index is on the y-axis and each dot represents a spike. (B) Learning curves for training (dashed) and validation (solid) accuracy for the stochastic and the deterministic case (average over n=6 trials ± std). (C) The mean Fano factor of the different layers in the stochastic network throughout training (± std, n=3). (D) The first three pairs of boxes show train, validation, and test loss of the CSNN as in (A) for the stochastic and the deterministic case for n=6 random initializations. The rightmost boxes show test loss for the opposite activation function. This means the network trained deterministically is tested with stochastic activation and vice versa. (E) Raster plots over trials of the spiking activity of three randomly chosen units from the second hidden layer. The units show clear trial-to-trial variability reminiscent of cortical activity.",
+        "tags": [
+          "曲线 / 时间序列",
+          "统计 / 分布"
+        ],
+        "original": "https://arxiv.org/html/2404.14964v3/07_classification.png",
+        "paper_url": "https://arxiv.org/html/2404.14964v3#S6.F7"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2404.10597v1",
+    "category": "神经形态硬件",
+    "paper": "Hardware-aware training of models with synaptic delays for digital event-driven neuromorphic processors",
+    "journal": "arXiv",
+    "year": "2024",
+    "author": "Patiño-Saucedo et al.",
+    "team": "CSIC / University of Seville / TU Eindhoven / imec / University of Twente",
+    "doi": "10.48550/arXiv.2404.10597",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2404.10597v1",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Weight-delay representations for spiking models",
+        "caption": "Fig. 1: Weight-delay representation before (a) and after (b) prune delay-synapses.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2404.10597v1/figures/weight-delay-repr2.png",
+        "paper_url": "https://arxiv.org/html/2404.10597v1#S3.F1"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Delay model training pipeline",
+        "caption": "Fig. 2: Delay model training pipeline.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2404.10597v1/figures/Methodology.png",
+        "paper_url": "https://arxiv.org/html/2404.10597v1#S3.F2"
+      },
+      {
+        "id": "F7",
+        "label": "Fig. 7",
+        "figure_title": "Spiking traces on PyTorch, Seneca and Loihi",
+        "caption": "Fig. 7: Comparison of spike traces between pytorch “mother-model” and the one executed on Seneca and Loihi for SHD testset sample X.",
+        "tags": [
+          "曲线 / 时间序列"
+        ],
+        "original": "https://arxiv.org/html/2404.10597v1/figures/spikes_48_48_20.png",
+        "paper_url": "https://arxiv.org/html/2404.10597v1#S4.F7"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2607.24396v1",
+    "category": "神经形态硬件",
+    "paper": "The SpiNNaker2 chip: a many-core platform for flexible and scalable brain-inspired computing",
+    "journal": "arXiv",
+    "year": "2026",
+    "author": "Scholze et al.",
+    "team": "TU Dresden / University of Manchester",
+    "doi": "10.48550/arXiv.2607.24396",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2607.24396v1",
+    "figures": [
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "SpiNNaker2 chip layout",
+        "caption": "Figure 2: SpiNNaker2 chip layout with components",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2607.24396v1/figures/s2_layout.png",
+        "paper_url": "https://arxiv.org/html/2607.24396v1#S3.F2"
+      },
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "SpiNNaker2 processing element components",
+        "caption": "Figure 3: SpiNNaker2 processing element (PE) components",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2607.24396v1/figures/s2_pe_2.png",
+        "paper_url": "https://arxiv.org/html/2607.24396v1#S3.F3"
+      },
+      {
+        "id": "F5",
+        "label": "Fig. 5",
+        "figure_title": "SpiNNaker2 event router",
+        "caption": "Figure 5: SpiNNaker2 event router",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2607.24396v1/figures/s2_event_router.png",
+        "paper_url": "https://arxiv.org/html/2607.24396v1#S3.F5"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2304.04640v5",
+    "category": "神经形态硬件",
+    "paper": "NeuroBench: A Framework for Benchmarking Neuromorphic Computing Algorithms and Systems",
+    "journal": "arXiv",
+    "year": "2025",
+    "author": "Yik et al.",
+    "team": "NeuroBench consortium",
+    "doi": "10.48550/arXiv.2304.04640",
+    "version": "v5",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2304.04640v5",
+    "figures": [
+      {
+        "id": "F6",
+        "label": "Fig. 6",
+        "figure_title": "Types of benchmarking systems",
+        "caption": "Figure 6: Types of neuromorphic systems at various integration scales.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2304.04640v5/figures/system_types.png",
+        "paper_url": "https://arxiv.org/html/2304.04640v5#Sx3.F6"
+      },
+      {
+        "id": "F10",
+        "label": "Fig. 10",
+        "figure_title": "Loihi 2 benchmarking setup",
+        "caption": "Figure 10: A Kapoho Point board with Loihi 2 chips is connected to a host PC via ethernet. Shown here is a Kapoho Point board with 8 Loihi 2 chips, while the experiments were run on a board with 1 Loihi 2 chip. The QUBO workload is loaded onto the chip, and all processing happens on Loihi 2. On Loihi 2, the neuro-cores, in yellow, are arranged in two 8×8 grids and iteratively update the variables of the QUBO workload. Embedded CPUs, shown in blue, monitor the cost of the variable assignment. Six parallel IO ports enable 3D stacking of multiple chips for larger workloads than used here. An additional IO port provides the communication to the host PC. The energy and runtime measurements cover the computation of the Loihi 2 chip.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2304.04640v5/Loihi2_Benchmarking.png",
+        "paper_url": "https://arxiv.org/html/2304.04640v5#Sx5.F10"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2503.18002v2",
+    "category": "神经形态硬件",
+    "paper": "Neuromorphic Principles for Efficient Large Language Models on Intel Loihi 2",
+    "journal": "arXiv",
+    "year": "2025",
+    "author": "Abreu et al.",
+    "team": "Intel Labs / University of Groningen / UC Santa Cruz",
+    "doi": "10.48550/arXiv.2503.18002",
+    "version": "v2",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2503.18002v2",
+    "figures": [
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Intel Loihi 2 systems from edge devices to HPC",
+        "caption": "Figure 2: Different Loihi 2 systems are available to cover a wide range of applications from the edge to HPC with up to 1 billion neurons.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://arxiv.org/html/2503.18002v2/loihi_systems.png",
+        "paper_url": "https://arxiv.org/html/2503.18002v2#A1.F2"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC8907969",
+    "category": "神经形态硬件",
+    "paper": "The BrainScaleS-2 Accelerated Neuromorphic System With Hybrid Plasticity",
+    "journal": "Frontiers in Neuroscience",
+    "year": "2022",
+    "author": "Pehle et al.",
+    "team": "Electronic Visions, Kirchhoff-Institute for Physics, Heidelberg University",
+    "doi": "10.3389/fnins.2022.795876",
+    "version": "published",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2022.795876/full",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Overview of the BrainScaleS-2 System architecture",
+        "caption": "Overview of the BrainScaleS-2 System architecture. (A) Bonded chip on its carrier board, one can see the two synaptic crossbar arrays. (B) Test setup, with the chip (covered by white plastic) mounted on a carrier board. The Field Programmable Gate Array (FPGA) and I/O boards have been designed by our collaboration partners at TU Dresden. (C) Schematic floorplan of the chip: Two processor cores with access to the synaptic crossbar array are on the top and bottom. The 512 neuron circuits and analog parameter storage are arranged in the middle. The event router routes events generated by the neurons and external events to the synapse drivers and to/from the digital I/O located on the left edge of the chip. (D) Conceptual view of the system architecture in spike processing mode: Event packets (red dot) get injected by the synapse driver into the synaptic crossbar, where they cause synaptic input integration to occur in synapses with matching addresses (indicated by red lines). Membrane voltage accumulation eventually results in spike generation in the associated neuron circuits. The resulting spikes are routable to both synapse drivers or external output. The plasticity processing unit has low latency and massively parallel access to synaptic weights, addresses, correlation measurements, and neuron membrane voltage dynamics during operation. Plasticity rules and other learning algorithms can use these observables to modify all parameters determining network emulation in an online fashion.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://www.frontiersin.org/files/Articles/795876/xml-images/fnins-16-795876-g0001.webp",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8907969/#F1"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Neuron properties before and after hardware calibration",
+        "caption": "Histograms showing a characterization of LIF properties of neurons before (top) and after (bottom) calibration. Each histogram shows all 512 neuron circuits on a single ASIC. In the top row, the configuration has been set equal for all neurons, to the median of the calibrated parameters. This results in different model characteristics due to device-specific fixed-pattern noise arising during the manufacturing process. After calibration, the analog parameters, such as bias currents and voltages, are selected such that the observed characteristics match a target.",
+        "tags": [
+          "统计 / 分布"
+        ],
+        "original": "https://www.frontiersin.org/files/Articles/795876/xml-images/fnins-16-795876-g0002.webp",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8907969/#F2"
+      },
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "Firing patterns of AdEx neuron circuits",
+        "caption": "Faithfully emulating the original AdEx equations, BrainScaleS-2's neuron circuits can be configured to generate distinct firing patterns as a response to a constant current stimulus. Here, we tuned the neuron circuits exemplarily to replicate four of the patterns described by Naud et al. (2008) using automated calibration routines. Each of the four panels features the time evolution of the membrane trace and the adaptation current, as well as the resulting trajectory through the phase space.",
+        "tags": [
+          "曲线 / 时间序列"
+        ],
+        "original": "https://www.frontiersin.org/files/Articles/795876/xml-images/fnins-16-795876-g0003.webp",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8907969/#F3"
+      }
+    ]
+  },
+  {
+    "source_id": "bioRxiv-2021.07.28.454025v2",
+    "category": "脑图谱与成像",
+    "paper": "Functional connectomics spanning multiple areas of mouse visual cortex",
+    "journal": "bioRxiv",
+    "year": "2021",
+    "author": "MICrONS Consortium",
+    "team": "Allen Institute / Princeton University / Baylor College of Medicine",
+    "doi": "10.1101/2021.07.28.454025",
+    "version": "v2",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.biorxiv.org/content/10.1101/2021.07.28.454025v2",
+    "figures": [
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Major experimental steps in the data acquisition workflow",
+        "caption": "Figure 2. Major experimental steps in the data acquisition workflow.",
+        "tags": [
+          "示意图 / 方法",
+          "显微 / 脑成像"
+        ],
+        "original": "https://xaqlab.com/wp-content/uploads/2021/08/Minnie-primary-citation-manuscript_submitted.pdf#page=6",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.07.28.454025v2.full#F2",
+        "pdf_crop": {
+          "page": 6,
+          "box": [
+            72,
+            72,
+            544,
+            340
+          ]
+        }
+      },
+      {
+        "id": "F4",
+        "label": "Fig. 4",
+        "figure_title": "EM Dataset",
+        "caption": "Figure 4. EM Dataset. a) Top view of EM dataset (gray) registered with the in vivo 2-photon structural dataset (vasculature in red and GCaMP in green). Area borders calculated from calcium imaging are shown as black lines (VISp, primary visual cortex; VISrl, rostro lateral visual cortex; VISal anterolateral visual cortex; VISlm lateromedial visual cortex). The two portions of the dataset are separated by a dashed line. b) Top view of small region showing the quality of the fine alignment and its robustness to large folds shown in “c” (link to dataset: https://ngl.microns-explorer.org/#!gs://microns-static-links/mm3/data_fig/4b.json). d) Montage of a single section showing the coverage from pia to white matter and across 3 different cortical regions. e) Example of a single tile from the section in ”d” with dashed squares representing the location in f - h. f-g) examples of excitatory synapses indicated with arrowheads (link to f in dataset: https://ngl.microns-explorer.org/#!gs://microns-static-links/mm3/data_fig/4f.json; link to g in dataset:https://ngl.microns-explorer.org/#!gs://microns-static-links/mm3/data_fig/4g.json) h) examples of inhibitory synapse indicated with arrowhead (link to h in dataset: https://ngl.microns-explorer.org/#!gs://microns-static-links/mm3/data_fig/4h.json).",
+        "tags": [
+          "显微 / 脑成像",
+          "网络 / 连接组"
+        ],
+        "original": "https://xaqlab.com/wp-content/uploads/2021/08/Minnie-primary-citation-manuscript_submitted.pdf#page=10",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.07.28.454025v2.full#F4",
+        "pdf_crop": {
+          "page": 10,
+          "box": [
+            72,
+            72,
+            544,
+            443
+          ]
+        }
+      },
+      {
+        "id": "F5",
+        "label": "Fig. 5",
+        "figure_title": "Reconstruction",
+        "caption": "Figure 5. Reconstruction. a) A pyramidal cell as it is reconstructed from the EM imagery (inset). b) Pyramidal cells from both subvolumes as they cross the subvolume boundary. c) All 78 proofread pyramidal cells from subvolume 65. d) A distant pair of pyramidal cells connected by a synapse within subvolume 65.",
+        "tags": [
+          "网络 / 连接组",
+          "显微 / 脑成像"
+        ],
+        "original": "https://xaqlab.com/wp-content/uploads/2021/08/Minnie-primary-citation-manuscript_submitted.pdf#page=13",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.07.28.454025v2.full#F5",
+        "pdf_crop": {
+          "page": 13,
+          "box": [
+            72,
+            72,
+            544,
+            406
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "bioRxiv-2021.02.22.432340v1",
+    "category": "脑图谱与成像",
+    "paper": "A massive 7T fMRI dataset to bridge cognitive and computational neuroscience",
+    "journal": "bioRxiv",
+    "year": "2021",
+    "author": "Allen et al.",
+    "team": "University of Minnesota / Medical University of South Carolina",
+    "doi": "10.1101/2021.02.22.432340",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.biorxiv.org/content/10.1101/2021.02.22.432340v1",
+    "figures": [
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "Improvements in spatial detail through upsampling",
+        "caption": "Figure 3. Improvements in spatial detail through upsampling. A, Comparison of approaches. For an example coronal slice in Subject 1, we compare the non-upsampled 1.8-mm preparation of the data (left), the upsampled 1-mm preparation (right), and a post-hoc upsampled version of the 1.8-mm results (middle). Two quantities are shown: mean signal intensity and variance explained by an ON-OFF GLM model. B, Zoomed view of white rectangle marked in panel A. C, Profile view of blue dotted horizontal line marked in panel B. Error bars in the bottom plot indicate ± 1 SEM across sessions. D, Timecourse estimates for voxels marked by blue arrows in panel C. Each trace corresponds to an estimate of the hemodynamic timecourse for a single voxel in one NSD scan session.",
+        "tags": [
+          "显微 / 脑成像",
+          "曲线 / 时间序列"
+        ],
+        "original": "https://static1.squarespace.com/static/529e96c6e4b02dbe8c63d032/t/6064f99b56e52f692eba4e3d/1617230246415/Allen_massive_2021.pdf#page=8",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.02.22.432340v1.full#F3",
+        "pdf_crop": {
+          "page": 8,
+          "box": [
+            148,
+            399,
+            465,
+            685
+          ]
+        }
+      },
+      {
+        "id": "F5",
+        "label": "Fig. 5",
+        "figure_title": "GLM estimation and denoising methods",
+        "caption": "Figure 5. GLM estimation and denoising methods. A–C, Library of HRFs. Hemodynamic response functions (HRFs) were estimated within a subspace spanned by 3 principal components (PCs). Distributions of voxel-specific HRFs are shown for individual subjects (panel A) and the group average (panel B). These distributions reside on the unit sphere with coordinate axes corresponding to 3 PC timecourses (see panel B, inset). We defined a series of points on the unit sphere (cyan dots), and the timecourses associated with these points are used as the HRF library (panel C). D, GLMdenoise. The average number of GLMdenoise regressors identified for each subject is shown (1.8-mm preparation; error bars indicate bootstrapped 68% confidence intervals). E, Ridge regression. Optimal ridge regression fractions are shown for an example scan session (subject 5, nsd10, 1-mm preparation). F, Noise ceilings for the case where responses are averaged across 3 trials. Results from individual subjects (nativesurface preparation) were mapped to fsaverage and then averaged. G, Performance summary. Each bar indicates the median noise ceiling across vertices in the nsdgeneral ROI.",
+        "tags": [
+          "显微 / 脑成像",
+          "统计 / 分布"
+        ],
+        "original": "https://static1.squarespace.com/static/529e96c6e4b02dbe8c63d032/t/6064f99b56e52f692eba4e3d/1617230246415/Allen_massive_2021.pdf#page=11",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.02.22.432340v1.full#F5",
+        "pdf_crop": {
+          "page": 11,
+          "box": [
+            70,
+            70,
+            542,
+            500
+          ]
+        }
+      },
+      {
+        "id": "F8",
+        "label": "Fig. 8",
+        "figure_title": "Prediction of brain activity using a brain-optimized neural network",
+        "caption": "Figure 8. Prediction of brain activity using a brain-optimized neural network. We used encoding models (Naselaris et al., 2011) to predict voxel activity in V1–hV4. NSD betas were divided into a training set and validation set, and the accuracy of different encoding models was quantified as the voxel-wise correlation between model predictions and responses observed in the validation set. A, Performance as a function of amount of training data used. Models include an encoding model based on AlexNet which is a task-optimized neural network (blue); encoding models based on GNet which is a brain-optimized neural network trained using data from single subjects (orange) or data from multiple subjects (red); and a V1-like control model based on Gabor filters (purple). Error bars reflect one standard deviation across results obtained from different bootstrap samples of the data. B, Detailed view of the performance of the multi-subject GNet model for a representative subject. C, Surface maps depicting spatial distribution of validation accuracy for the multi-subject GNet model.",
+        "tags": [
+          "显微 / 脑成像",
+          "散点 / 降维"
+        ],
+        "original": "https://static1.squarespace.com/static/529e96c6e4b02dbe8c63d032/t/6064f99b56e52f692eba4e3d/1617230246415/Allen_massive_2021.pdf#page=16",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2021.02.22.432340v1.full#F8",
+        "pdf_crop": {
+          "page": 16,
+          "box": [
+            70,
+            298,
+            542,
+            644
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "bioRxiv-2025.08.30.673281v1",
+    "category": "神经环路与决策",
+    "paper": "Brain-wide organization of intrinsic timescales at single-neuron resolution",
+    "journal": "bioRxiv",
+    "year": "2025",
+    "author": "Shi et al.",
+    "team": "Princeton University / Max Planck Institute for Biological Cybernetics / International Brain Laboratory",
+    "doi": "10.1101/2025.08.30.673281",
+    "version": "v1",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.biorxiv.org/content/10.1101/2025.08.30.673281v1",
+    "figures": [
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "A map of intrinsic timescales across the mouse brain",
+        "caption": "Fig. 2. A map of intrinsic timescales across the mouse brain. a, Brain-slice plots (top and sagittal views) of the median effective timescale across brain regions. b, Effective timescales for all brain regions across the 12 major brain structures indicated by color (CTX, isocortex; OLF, olfactory areas; HPF, hippocampal formation; CTXsp, cortical subplate; STR, striatum; PAL, pallidum; TH, thalamus; HY, hypothalamus; MB, midbrain; P, pons; MY, medulla; CB, cerebellum). Bar height indicates the median, and error bars represent the 25th to 75th percentiles of the timescale distribution. The y-axis transitions from a linear to logarithmic scale (horizontal line) to accommodate the wide distribution of timescales. c, Effective timescales for the three major brain divisions: forebrain (including isocortex, olfactory areas, hippocampal formation, cortical subplate, striatum, pallidum, thalamus, and hypothalamus), midbrain, and hindbrain (including medulla, pons, and cerebellum). Bar height indicates the median (forebrain 0.16 s, n = 8,399 neurons; midbrain 0.76 s, n = 914; hindbrain 0.89 s, n = 966), and error bars represent the 25th to 75th percentiles. Effective timescales were significantly longer in the midbrain and hindbrain than in the forebrain (two-sided Wilcoxon rank sum test, ∗∗∗∗ p < 10⁻¹⁰ ). d, Effective timescales in 12 major brain structures. Bar height indicates the median, and error bars represent the 25th to 75th percentiles.",
+        "tags": [
+          "显微 / 脑成像",
+          "统计 / 分布"
+        ],
+        "original": "https://storage.googleapis.com/lacuna-pdfs-lunar-airport-385023/pdfs/b6/91/b6912f5290d2d7aadbb26d31855d3d12230d61dc69dfd46412fc57641863f5e1.pdf#page=5",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2025.08.30.673281v1.full#F2",
+        "pdf_crop": {
+          "page": 5,
+          "box": [
+            44,
+            50,
+            567,
+            501
+          ]
+        }
+      },
+      {
+        "id": "F5",
+        "label": "Fig. 5",
+        "figure_title": "Universal scaling of timescales across the brain",
+        "caption": "Fig. 5. Universal scaling of timescales across the brain. a, The distributions of effective timescales across neurons within each major brain structure (colored) and across neurons pooled from all regions (gray) are well described by a power law with an exponent γ close to 2 (red line: best-fitting power law; dashed line: reference power law with exponent 2). b, The exponent γ of the best-fitting power-law for timescale distributions was near 2 in most brain regions, which had sufficient data for fitting (more than 40 neurons). Error bars represent 95% confidence intervals. c, The power-law distribution is defined only above a cutoff value determined during the fitting procedure. The cutoff divides timescales into fast (below the cutoff, blue) and slow (above the cutoff, purple), with only the slow timescales following the power-law. d, In all brain structures, cutoff values (solid bars) either exceeded the median timescale (open bar) or fell just below it. Numbers above bars indicate cutoff percentiles.",
+        "tags": [
+          "统计 / 分布"
+        ],
+        "original": "https://storage.googleapis.com/lacuna-pdfs-lunar-airport-385023/pdfs/b6/91/b6912f5290d2d7aadbb26d31855d3d12230d61dc69dfd46412fc57641863f5e1.pdf#page=12",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2025.08.30.673281v1.full#F5",
+        "pdf_crop": {
+          "page": 12,
+          "box": [
+            43,
+            51,
+            567,
+            387
+          ]
+        }
+      },
+      {
+        "id": "F6",
+        "label": "Fig. 6",
+        "figure_title": "Network mechanisms for multiscale architecture",
+        "caption": "Fig. 6. Network mechanisms for multiscale architecture. a, In linear networks, connection weights have a non-heavy-tailed distribution (upper panel). The connectivity eigenvalue distribution is bounded and approximated near zero by the leading term of its power-series expansion: f (λ) ∝ λ^ζ as λ → 0 (lower panel). b, Example connectivity eigenvalue distributions characterized by distinct values of ζ near zero: ζ = −0.5, gamma distribution with a shape parameter 0.5; ζ = 0, uniform distribution; ζ = 0.5, semi-circle distribution; ζ = 1, gamma distribution with a shape parameter 2. c, At the edge of instability, linear networks generate a power-law distribution of timescales with exponent γ = 2 + ζ (solid lines: simulations of network timescales computed as the inverses of connectivity eigenvalues sampled from distributions in panel b; dashed lines: power law with exponent derived from theory). d, The synaptic gain g controls the distance to the instability threshold by scaling the range of the connectivity eigenvalue distribution. e, Reducing g shifts the network further from the instability threshold, causing power-law collapse (solid lines: simulations of network timescales for ζ = 0.5; dashed line: reference power law with γ = ζ + 2). f, The synaptic time constant τ_syn scales the range of the connectivity eigenvalue distribution without affecting the distance to the instability threshold. g, Varying τ_syn does not affect the power-law exponent, while modulating the cutoff and thereby median timescale (solid lines: simulations of network timescales for ζ = 0.5; dashed line: reference power law with γ = ζ + 2). h, In nonlinear networks, the heavy-tailed connectivity with α-stable distribution has a power-law tail with exponent γ_c = 1 + α (upper panel). The connectivity eigenvalue spectrum extends beyond the linear instability threshold (lower panel). i, In the chaotic regime, nonlinear networks generate a power-law distribution of timescales with exponent γ matching that of the connectivity distribution (solid lines: network simulations for varying connectivity scaling parameter α; dashed lines: best-fitting power law with exponent γ; g = 1.8). j, The scaling exponent of the timescale distribution is independent of the synaptic gain g (solid lines: network simulations for varying g; dashed lines: best-fitting power law with exponent γ; α = 1.2). k, Varying τ_syn does not affect the power-law exponent, while modulating the median timescale (solid lines: network simulations for varying τ_syn; dashed lines: best-fitting power law with exponent γ; α = 1.2, g = 1.8).",
+        "tags": [
+          "网络 / 连接组",
+          "统计 / 分布"
+        ],
+        "original": "https://storage.googleapis.com/lacuna-pdfs-lunar-airport-385023/pdfs/b6/91/b6912f5290d2d7aadbb26d31855d3d12230d61dc69dfd46412fc57641863f5e1.pdf#page=14",
+        "paper_url": "https://www.biorxiv.org/content/10.1101/2025.08.30.673281v1.full#F6",
+        "pdf_crop": {
+          "page": 14,
+          "box": [
+            43,
+            53,
+            567,
+            341
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "PMC5738356",
+    "category": "类脑计算与模型",
+    "paper": "Supervised learning in spiking neural networks with FORCE training",
+    "journal": "Nature Communications",
+    "year": "2017",
+    "author": "Nicola et al.",
+    "doi": "10.1038/s41467-017-01827-3",
+    "pmcid": "PMC5738356",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5738356/",
+    "figures": [
+      {
+        "id": "Fig1",
+        "label": "Fig. 1",
+        "figure_title": "The FORCE method explained.",
+        "caption": "The FORCE method explained. a In the FORCE method, a spiking neural network contains a backbone of static and strong synaptic weights that scale like 1/√N to induce network level chaos (blue). A secondary set of weights are added to the weight matrix with the decoders determined through a time optimization procedure (red). The Recursive Least Squares technique (RLS) is used in all subsequent simulations. FORCE training requires a supervisor x(t) to estimate with x̂(t). b Prior to learning, the firing rates for 5 random neurons from a network of 1000 rate equations are in the chaotic regime. The chaos is controlled and converted to steady-state oscillations. c This allows the network to represent a 5 Hz sinusoidal input (black). After learning, the network (blue) still displays the 5 Hz sinusoidal oscillation as its macroscopic dynamics and the training is successful. The total training time is 5 s. d The decoders for 20 randomly selected neurons in the network, before (t < 5), during (5 ≤ t < 10) and after (t ≥ 10) FORCE training. e The eigenvalue spectrum for the effective weight matrix before (red) and after (black) FORCE training. Note the lack of dominant eigenvalues in the weight matrix",
+        "tags": [
+          "网络 / 连接组",
+          "曲线 / 时间序列",
+          "热图 / 矩阵"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/57f1/5738356/3b4d1c89026e/41467_2017_1827_Fig1_HTML.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5738356/#Fig1"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC9710781",
+    "category": "类脑计算与模型",
+    "paper": "Brain connectivity meets reservoir computing",
+    "journal": "PLOS Computational Biology",
+    "year": "2022",
+    "author": "See paper",
+    "doi": "10.1371/journal.pcbi.1010639",
+    "pmcid": "PMC9710781",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9710781/",
+    "figures": [
+      {
+        "id": "pcbi.1010639.g001",
+        "label": "Fig 1",
+        "figure_title": "General approach scheme.",
+        "caption": "General approach scheme.For each of the three species we generated a Bio- Echo State Network (BioESN) by integrating the real connectivity pattern as reservoir of an Echo State Network (ESN). Thus, in contrast to the classical ESN with randomly connected reservoir, BioESNs have connectomes based on connectivity coming from the empirical connectomes. We also propose a framework for mapping biological to artificial networks, bio2art, which allows to optionally scale up the empirical connectomes to augment the model capacity. The resulting BioESNs are then tested on cognitive tasks (see Methods for details on the tasks).",
+        "tags": [
+          "示意图 / 方法",
+          "网络 / 连接组"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3450/9710781/132f4725f4a6/pcbi.1010639.g001.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9710781/#pcbi.1010639.g001"
+      },
+      {
+        "id": "pcbi.1010639.g002",
+        "label": "Fig 2",
+        "figure_title": "bio2art, scaling up connectivity and surrogates.",
+        "caption": "bio2art, scaling up connectivity and surrogates.The connectivity of the networks derived from the empirical connectivity and used as reservoirs in the BioESNs can be represented as an adjacency matrix. This figure shows examples of adjacency matrices representing a scaled up version (4x) of the Macaque monkey empirical brain connectivity then integrated into the BioESN as reservoir. We also build surrogate connectivities for comparison with the empirical case that preserves real connectivity patterns. Each surrogate network controls for different aspects of the connectivity, as shown in the summary table in the figure. The figure depicts an example of the empirical (Macaque) connectivity and the different derived connectivities tested. Notice the nodes indices, explicitly showing the upscaling of the connectivity. This was repeated for all the other connectomes tested. See Mapping and upscaling connectomes with bio2art for more details on connectivity generation and surrogates.",
+        "tags": [
+          "网络 / 连接组",
+          "热图 / 矩阵"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3450/9710781/fdee20e83301/pcbi.1010639.g002.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9710781/#pcbi.1010639.g002"
+      },
+      {
+        "id": "pcbi.1010639.g003",
+        "label": "Fig 3",
+        "figure_title": "Memory capacity task.",
+        "caption": "Memory capacity task. (A) (Upper) Schematic representation of the task. An input signal (X) is feed as a time series into the network through an input neuron. Each output neuron independently learns a lagged version of the input (Yτ) (Lower) Alternative representation of the task in terms of the input/output structure of the data. (B) Examples of network evaluation on the task. A forgetting curve (grey line) is shown for each tested species (columns) and connectivity W condition (color coded). For each time lag (τ) the score is plotted (squared Pearson correlation coefficient, ρ2). The memory capacity (MC, see legends) is defined as the sum of performances over all values of τ and represents the shaded areas in the plotted examples. (C) Performance of the bio-instantiated echo state networks (BioESNs) for the three different species tested. For each pattern length, 100 different networks with newly instantiated weights were trained (4000 time steps) and tested (1000 time steps). The test performance of each networks is represented by a point in the plots.",
+        "tags": [
+          "示意图 / 方法",
+          "网络 / 连接组",
+          "曲线 / 时间序列"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/3450/9710781/057fa630af4e/pcbi.1010639.g003.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9710781/#pcbi.1010639.g003"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC6497001",
+    "category": "类脑计算与模型",
+    "paper": "Optimal modularity and memory capacity of neural reservoirs",
+    "journal": "Network Neuroscience",
+    "year": "2019",
+    "author": "Rodriguez et al.",
+    "doi": "10.1162/netn_a_00082",
+    "pmcid": "PMC6497001",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6497001/",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Figure 1.",
+        "figure_title": "A modular echo state network",
+        "caption": "(A) A modular echo state network (ESN). At each time step a k-dimensional input signal uk(t) is introduced with randomly weighted input weights Win. The reservoir’s state x(t) evolves through a randomly generated constant weight matrix W. The output weights Wout are trained based on the tasks. (B) μ is the fraction of bridges that connect communities within the reservoir. At low μ community structure is pronounced, while communities vanish at high μ (≈ 0.5). We hypothesize that performance increases when a balance between the local cohesion of communities and the global connectivity of bridges is met. (C) A visual comparison of activation functions. Our activation function (solid blue) has threshold-like behavior where small inputs invoke no response up to a threshold, after which the neuron becomes excited. This type of activity mimics the kind expressed in many biological neural networks.",
+        "tags": [
+          "网络 / 连接组",
+          "热图 / 矩阵"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c84f/6497001/7c50ea48cf4b/netn-03-551-g001.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6497001/#F1"
+      },
+      {
+        "id": "F2",
+        "label": "Figure 2.",
+        "figure_title": "Activation regimes in modular reservoirs",
+        "caption": "(A) A two-community network of threshold-like neurons receives input into the seed community (blue). (B) An optimal region with maximum activation emerges. (C) Phase diagram for the two-community case. Communities behave similar to gating functions, which can be turned on and transmit information once the input surpasses a threshold. (D) Reservoirs with many communities and randomly injected input also exhibit optimal modularity. (E) The activity level of the network is shown. At low μ no single community receives enough signal to be activated, while at high μ internal cohesion is too weak to recruit other nodes. In between, the signal can be consolidated effectively, activating larger portions of the network. (F) The full phase-diagram showing the total fractional activity of the network. Error bars represent the standard error of the mean.",
+        "tags": [
+          "示意图 / 方法",
+          "网络 / 连接组"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/c84f/6497001/8acb0ad70da5/netn-03-551-g002.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6497001/#F2"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC10882054",
+    "category": "果蝇与感觉",
+    "paper": "Heterogeneity of synaptic connectivity in the fly visual system",
+    "journal": "Nature Communications",
+    "year": "2024",
+    "author": "See paper",
+    "doi": "10.1038/s41467-024-45971-z",
+    "pmcid": "PMC10882054",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10882054/",
+    "figures": [
+      {
+        "id": "Fig1",
+        "label": "Fig. 1",
+        "figure_title": "Mapping all presynaptic inputs to Tm9 in FlyWire.",
+        "caption": "Mapping all presynaptic inputs to Tm9 in FlyWire. a Schematic of the fly visual system, including core circuitry of the OFF pathway. b Confocal image of a visual system in which a Tm9-specific Gal4 line drives expression of GFP (green). Representative example of n = 7 brains imaged. The scale bar is 50 µm. c In vivo calcium signals in Tm9 in response to ON-OFF-fullfield flashes. Shown are time traces (all individual traces and the mean, n = 20) and tSNE analysis of Z-scored traces, color-coded upon k-means clustering (6 clusters). d Overview of all 320 Tm9 neurons of the FAFB dataset analyzed in FlyWire (top), two views of all Tm9s analyzed in the right optic lobe (bottom). e Schematic displaying the 20 input partners identified in this analysis to be present in at least 5% of all columns analyzed.",
+        "tags": [
+          "示意图 / 方法",
+          "显微 / 脑成像"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a914/10882054/3cfcde055505/41467_2024_45971_Fig1_HTML.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10882054/#Fig1"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC12416849",
+    "category": "神经环路与决策",
+    "paper": "Decoding decision-making behavior from sparse neural spiking activity",
+    "journal": "PLOS Computational Biology",
+    "year": "2025",
+    "author": "Zhang et al.",
+    "doi": "10.1371/journal.pcbi.1013335",
+    "pmcid": "PMC12416849",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12416849/",
+    "figures": [
+      {
+        "id": "pcbi.1013335.g001",
+        "label": "Fig 1",
+        "figure_title": "The CA-BiLSTM model accurately decodes mouse perceptual decision-making.",
+        "caption": "The CA-BiLSTM model accurately decodes mouse perceptual decision-making.A, The collection of neural spike data. In the context of perceptual decision tasks in mice, we collected neural spike data pertaining to the interval between the observation of a grating and the subsequent rotation of a wheel. B, Predicting the decision behavior of mice (Left or right) based on neural spike data. C, A schematic showing the architecture of CA-BiLSTM for neural spike data. The CA-BiLSTM model consists of three components: a channel attention layer, a BiLSTM layer, and a Dense layer.",
+        "tags": [
+          "示意图 / 方法"
+        ],
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2ec9/12416849/9adacc6e73b4/pcbi.1013335.g001.jpg",
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12416849/#pcbi.1013335.g001"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC11446847",
+    "paper": "Connectomic reconstruction predicts visual features used for navigation",
+    "year": "2024",
+    "author": "Dustin Garner et al.",
+    "journal": "Nature",
+    "doi": "10.1038/s41586-024-07967-z",
+    "category": "果蝇与感觉",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446847/",
+    "pmcid": "PMC11446847",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Identification and classification of MeTu neurons in the AVP.",
+        "caption": "Identification and classification of MeTu neurons in the AVP.a, Diagram of the D. melanogaster central brain, emphasizing the AVP. Important regions are darker grey, including the medulla, AOTU, bulb and ellipsoid body (the former three have counterparts in both hemispheres). The three crucial neurons of the AVP are MeTu (purple), TuBu (yellow) and ER (cyan). b, All MeTu (n = 453 left; n = 441 right), TuBu (n = 75 left; n = 75 right) and visual ER (n = 116 left; n = 116 right) neurons. c, Left, synapse plots of TuBu (left) and MeTu (middle) neurons in the posterior lateral (red), posterior central (blue), anterior (green) and medial (yellow) region of the AOTUsu. Right, renders of TuBu in the AOTUsu_R (top) and MeTu in the AOTUsu_R (middle) and ME_R (bottom) with the same regional colours as the synapse plots on the left. Coordinates: A, anterior; R, lateral side of the right hemisphere; P, posterior; V, ventral. d, Synaptic weight matrices of MeTu type (top) or MeTu subtype (bottom) to TuBu type connectivity (right hemisphere). e, All neurons of types MeTu1 (far left), MeTu2 (left middle), MeTu3 (right middle) and MeTu4 (far right). f, UMAPs of all MeTu neurons with identified upstream partners on the basis of the synaptic weight of both the top five medulla input neuron types and AOTU output neuron types (top), or just the top five medulla input types (bottom) (see Methods for details). Groupings are generally consistent with MeTu1–MeTu4 groups in the main text, except MeTu3a neurons, which are closer to MeTu2 neurons (because of the similar polarization input) than other MeTu3 neurons. g, Synaptic weight matrix of all MeTu neurons with identified upstream partners (columns) and their AOTU output partners (red top rows) and top five medulla input types (teal bottom rows). Dendrogram branches and column labels are colour-coded according to MeTu. See Supplementary Data 1h,i for analyses with entire MeTu neurons.",
+        "tags": [
+          "连接组",
+          "视觉",
+          "脑区"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446847/#Fig1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2957/11446847/62c723f9642f/41586_2024_7967_Fig1_HTML.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC11537989",
+    "paper": "Hue selectivity from recurrent circuitry in Drosophila",
+    "year": "2024",
+    "author": "Matthias P. Christenson et al.",
+    "journal": "Nature Neuroscience",
+    "doi": "10.1038/s41593-024-01640-4",
+    "category": "果蝇与感觉",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537989/",
+    "pmcid": "PMC11537989",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "The Drosophila color space and experimental methods.",
+        "caption": "The Drosophila color space and experimental methods.a, Relative spectral sensitivity of opsins expressed in the fruit fly retina; data from ref. 48 fit with the equation from ref. 49. b, Fly color space defined by the photon captures q of Rh3, Rh4, Rh5 and Rh6 opsins. The luminance of a color is defined as the sum of opsin captures (∑iqi). c, Fly chromatic hyperplane defined by restricting the luminance to a constant value. In the chromatic hyperplane, there are four vertices, one for each opsin, six edges between pairs of opsins and four faces connecting three opsins. The gray box indicates the gamut of fly colors accurately reproducible with our stimulation system. Within the chromatic plane, the saturation of a color is defined as the distance of the stimulus from the fly’s effective white point (that is, the center of the tetrahedron). The hue of a color is defined by the angular direction of the color vector stretching from the white central point to a particular stimulus point. d, 2D projection of the fly color space onto the two color-opponent components: (Rh5 + Rh6) − (Rh3 + Rh4) and (Rh4 + Rh5) − (Rh3 + Rh6). e, Two-photon imaging setup. The fly is secured facing the LED setup, and LED sources are combined using a custom color mixer to form a single collimated full-field beam. D, deep UV; U, UV; V, violet; B, blue; L, lime; O, orange. f, Schematic of the fruit fly color circuit indicating the imaging fields used to record photoreceptors and interneurons in the medulla and Tm neurons in the lobula. g, Example dF/F traces of single regions of interest (ROIs; gray traces) in response to the neuron’s preferred stimulus. The black line indicates the mean response. a.u., arbitrary units.Source data",
+        "tags": [
+          "视觉",
+          "示意图",
+          "曲线"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537989/#Fig1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/048b/11537989/691117f96347/41593_2024_1640_Fig1_HTML.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC12124391",
+    "paper": "Hybrid neural networks in the mushroom body drive olfactory preference in Drosophila",
+    "year": "2025",
+    "author": "Li-Shan Cheng et al.",
+    "journal": "Science Advances",
+    "doi": "10.1126/sciadv.adq9893",
+    "category": "果蝇与感觉",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12124391/fullTextXML",
+    "pmcid": "PMC12124391",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "果蝇蘑菇体突触连接",
+        "caption": "Preferential connectivity between olfactory PNs and three classes of KCs. (A) The connectivity matrix of PN-to-KC synapses derived from the hemibrain dataset (32) exhibits an L-shaped configuration. PNs originating from individual glomeruli were categorized into three clusters based on their connection preferences in (B). The color coding indicates the number of uniglomerular PNs connected to a particular KC. Note the hybrid pattern in which the PN cluster 3 projects to all KC classes (divergent) whereas PN cluster 1 projects predominantly to γ KC (convergent) (figs. S6 and S7) (B) Connection preferences indicated by the Gi score between a KC class (i = γ, α′/β′, or α/β) and PNs from a particular glomerulus (see Materials and Methods). The glomeruli are ordered by the Gγ score. Dashed lines indicate the range of Gγ scores of the shuffled results between −2 and 2. “#” indicates food-responsive glomeruli (22). “*” indicates pheromone-attractive glomeruli for a female fly (69). (C) Frequency distribution of PN numbers received by each individual neuron in three KC classes (see more details in fig. S2). (D) Analysis of global input preferences revealed by PCA on the PN-to-KC connection matrix after global shuffling of upstream PNs for individual KCs within the same class (refer to fig. S9 for detailed information). The color indicates the shuffled ratio of each KC class.",
+        "tags": [
+          "热图",
+          "分布",
+          "神经环路"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12124391/#F1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9d6d/12124391/1ce040d62fd0/sciadv.adq9893-f1.jpg"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "蘑菇体神经元连接的空间分布",
+        "caption": "Preferential spatial connectivity between PN clusters and KC classes. (A and B) Spatial distribution of neurites and PN-to-KC synapses from each PN cluster (A) and KC class (B) shown by color code. AL, antennal lobe; LH, lateral horn; CA, calyx. (C) Quantitative spatial distribution of PN neurites. The dorsal/ventral (D/V) compartments are separated by the red dashed line in (A). (D) Distribution similarity between presynapse and postsynapse in PN-to-KC connections compared with shuffled data (n = 30, error bars: ± SD). (E) Correlation between the distribution similarity of PN-to-KC synapses and their input connection weight ratio (see Materials and Methods; fig. S2E) quantified by the difference between the real network and shuffled networks, as shown by the linear regression plot (r2 = 0.96, P < 0.001). (F) Analysis of local input preferences quantified by PCA after local random shuffling of KC claw inputs. Colors indicate different shuffling radii (refer to fig. S20 for detailed information). (G) Correlation of spatial innervation preference between each glomerulus and each PN cluster by the comparison between the real network and shuffled networks (see Materials and Methods), as shown by the linear regression plot (for the comparison between CA and LH, r2 = 0.61, P < 0.001; for the comparison between CA and AL, r2 = 0.45, P < 0.001).",
+        "tags": [
+          "神经环路",
+          "脑区",
+          "统计"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12124391/#F2",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/9d6d/12124391/eafe72b2622b/sciadv.adq9893-f2.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC11446827",
+    "paper": "Neuronal parts list and wiring diagram for a visual system",
+    "year": "2024",
+    "author": "Arie Matsliah et al.",
+    "journal": "Nature",
+    "doi": "10.1038/s41586-024-07981-1",
+    "category": "果蝇与感觉",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446827/",
+    "pmcid": "PMC11446827",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Class, family, type and cell.",
+        "caption": "Class, family, type and cell.a, Families in the columnar class. C, centrifugal; L, lamina monopolar; Lawf, lamina wide-field; Mi, medulla intrinsic; R, receptor; T1–T5, T neuron; Tm, transmedullary; TmY, transmedullary Y; Tlp, translobula plate; Y, Y neuron. b, Families in the interneuron class. Serpentine medulla (Sm) is new. Dm, distal medulla; Lai, lamina intrinsic; Li, lobula intrinsic, LPi, lobula plate intrinsic; Pm, proximal medulla. c, Families in the cross-neuropil tangential and amacrine classes. For tangential families, axon and dendrite are distinguished graphically. All are new except for Lat and Am1. LLPt, lobula–lobula plate tangential; LMt, lobula–medulla tangential; LMa, lobula medulla amacrine; Lat, lamina tangential; MLt, medulla–lobula tangential; PDt, proximal to distal medulla tangential. A, anterior; L, lateral; M, medial; P, posterior. d, Cell types are ordered by the number of proofread cells in each type, starting with the most numerous types. Additional details are provided in Extended Data Tables 1 and 2. e, The numbers of families (left), types (middle) and cells (right) in each class. f, The numbers of types (left) and cells (right) in each neuropil-defined family. Bold font indicates families that are entirely new, or almost entirely new. MLLPa, medulla lobula lobula plate amacrine, is a synonym for Am1. g, The number of types versus the number of cells in a type. The x axis denotes type size (log-scale), and the y axis shows the number of types with matching size. The peak near 800 consists of the numerous types—those with approximately the same cardinality as the ommatidia of the compound eye.",
+        "tags": [
+          "神经元",
+          "连接组"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11446827/#Fig1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/90b0/11446827/0470f7cbe070/41586_2024_7981_Fig1_HTML.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "10.1016-j.tics.2020.01.008",
+    "paper": "Linking Structure and Function in Macroscale Brain Networks",
+    "year": "2020",
+    "author": "Laura E. Suárez et al.",
+    "journal": "Trends in Cognitive Sciences",
+    "doi": "10.1016/j.tics.2020.01.008",
+    "category": "神经环路与决策",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.sciencedirect.com/science/article/pii/S1364661320300267",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Imperfect Correspondence between Structural and Functional Connectivity",
+        "caption": "Figure 1. Imperfect Correspondence between Structural and Functional Connectivity. Despite considerable overlap, structure and function diverge both locally and globally. (A) Due to the sparse nature of structural connectivity, most functional connections are not supported by an underlying structural connection. Models of higher-order interactions are therefore necessary to make predictions about most functional connections. (B) In cases where a corresponding structural connection exists, there is a correlation between structural and functional connection weights, but these correlations are typically between R = 0.3 and R = 0.7. This means that even for this small class of connections, direct structural connectivity optimistically explains no more than 50% of the variance in functional connectivity. (C) Structure and function continue to diverge at the mesoscopic scale. Community detection for structural and functional networks typically yields different solutions; functional communities (resting state networks) tend to encompass spatially distributed systems with perceptual, cognitive, and affective relevance, while structural networks tend to be more spatially constrained.",
+        "tags": [
+          "脑网络",
+          "示意图"
+        ],
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S1364661320300267",
+        "original": "https://ars.els-cdn.com/content/image/1-s2.0-S1364661320300267-gr1.jpg"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Models of Higher-Order Interactions",
+        "caption": "Figure 2. Models of Higher-Order Interactions. Due to the poor direct correspondence between structural and functional connectivity, multiple models of higher-order interactions have been proposed to translate structure to function. These models entail varying assumptions and complexity. Statistical models attempt to assign weights or loadings to structural, and in some cases, functional connections, to maximize correlations between network modalities [41,42]. Communication models embody one or more signaling mechanisms, ranging between those that are fully centralized (routing) or fully decentralized (diffusion) [37,43–45]. Biophysical models simulate patterns of synchrony among biologically realistic neuronal populations, thereby directly generating spontaneous or stimulation-induced activity [46–49].",
+        "tags": [
+          "脑网络",
+          "示意图"
+        ],
+        "paper_url": "https://www.sciencedirect.com/science/article/pii/S1364661320300267",
+        "original": "https://ars.els-cdn.com/content/image/1-s2.0-S1364661320300267-gr2.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC9974411",
+    "paper": "Neuronal morphology enhances robustness to perturbations of channel densities",
+    "year": "2023",
+    "author": "Yunliang Zang and Eve Marder",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "doi": "10.1073/pnas.2219049120",
+    "category": "神经环路与决策",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9974411/fullTextXML",
+    "pmcid": "PMC9974411",
+    "figures": [
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "神经元参数扰动与放电类型",
+        "caption": "“Noise” perturbation protocol and neuronal resilience to conductance variations. (A) 2D schematic of the channel conductance perturbation protocol (Bottom Middle, shaded in yellow). x and y represent different types of ion channels. In each trial, all channel conductances of a parent model were simultaneously varied by random values (details in Materials and Methods). Each parent model (n = 1,292) generated new m child models after m-trial perturbations. Example firing patterns in child models include tonic spiking (child 1), bursting (child 2), aperiodic spiking (child 3), depolarization block (db, child 4), and non-spiking (child 100). (B) Histogram of the ratio of child models that are rebound bursters for each parent model, when models undergo different ranges of random channel conductance variations, ±10%, ±50%, and ±100% from left to right.",
+        "tags": [
+          "神经元",
+          "时间序列",
+          "分布"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9974411/#fig02",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f3b7/9974411/b771c5704c31/pnas.2219049120fig02.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "10.1063-5.0304136",
+    "paper": "Controlling reciprocity in binary and weighted networks: A novel density-conserving approach",
+    "year": "2026",
+    "author": "Fatemeh Hadaeghi et al.",
+    "journal": "Chaos",
+    "doi": "10.1063/5.0304136",
+    "category": "网络与复杂系统",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pubs.aip.org/aip/cha/article/36/2/023116/3378596/Controlling-reciprocity-in-binary-and-weighted",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Representative synthetic and empirical connectomes",
+        "caption": "Representative synthetic (a) and empirical (b) connectomes used for algorithm testing. (a) The random network, initially with reciprocity r_b = 0.07, is shown after adjusting its reciprocity to r = 1.0. Small-world and modular networks are originally symmetric. Illustrated connectomes display the adjacency matrices after adjusting their reciprocity to r_b = 1.0 using Algorithm 1. (c) Community structures identified in two networks with clear modular organization. (d) Human connectome (Human-struct-scale125) with initial reciprocity, r_b = 1.0 (fully symmetric), shown alongside representations with adjusted reciprocity values, r_b = [0.1, 0.3, 0.5, 0.7, 0.9], from left to right.",
+        "tags": [
+          "矩阵",
+          "网络结构"
+        ],
+        "paper_url": "https://pubs.aip.org/aip/cha/article/36/2/023116/3378596/Controlling-reciprocity-in-binary-and-weighted#f1",
+        "original": "https://pubs.aip.org/view-large/figure/93034509/023116_1_5.0304136.figures.online.f1.jpg",
+        "figure_view": "aip",
+        "original_label": "原图所在页"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "Functional implications of controlling reciprocity",
+        "caption": "Functional implications of controlling reciprocity. Change in the eigenspectrum of adjacency matrices as their reciprocity is adjusted from r_b = 0 to r_b = 1.0 using Algorithm 1 (binary). The top panel shows how eigenvalues are arranged in the complex plane, while the bottom panel provides a zoomed-in view. Distributions of real and imaginary components at various degrees of reciprocity were calculated from data collected in 50 trials for each setting.",
+        "tags": [
+          "散点",
+          "分布",
+          "网络"
+        ],
+        "paper_url": "https://pubs.aip.org/aip/cha/article/36/2/023116/3378596/Controlling-reciprocity-in-binary-and-weighted#f2",
+        "original": "https://pubs.aip.org/view-large/figure/93034515/023116_1_5.0304136.figures.online.f2.jpg",
+        "figure_view": "aip",
+        "original_label": "原图所在页"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC11239504",
+    "paper": "Flexible multitask computation in recurrent networks utilizes shared dynamical motifs",
+    "year": "2024",
+    "author": "Laura N. Driscoll et al.",
+    "journal": "Nature Neuroscience",
+    "doi": "10.1038/s41593-024-01668-6",
+    "category": "网络与复杂系统",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11239504/fullTextXML",
+    "pmcid": "PMC11239504",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "单任务循环网络的共享固定点",
+        "caption": "Single-task network shared fixed points across task periods. a, Left: noisy fixation, stimulus (modality 1 and modality 2) and rule input time series (overlayed without noise for clarity). Noise was used during training, and analyses were performed on running the network without noise. Vertical lines divide task periods: context, stimulus, memory and response. Right: targets (thick lines) overlaid with outputs of a trained network (thin lines). Stim, stimulus task period. b, Fraction variance explained in each task period by top two PCs of neural state trajectories for 1,024 stimulus conditions from every other task period (left). We performed PCA on task period Y and then calculated how much variance it explained on task period X. Right: top 11 PCs of neural state trajectories for 1,024 stimulus conditions from each task period. c–f, State space plots for single-task network performing MemoryPro during context (c), stimulus (d), memory (e) and response (f) task periods. State trajectories and fixed points projected onto the first two PCs defined by state trajectories during the memory period on the x and y axes and the output weight vector (from Wout) associated with cosθstimulus on the z axis. We visualized fixed point locations for θstimulus = 0 (black dots) in all subpanels of Fig. 1 and additionally plotted state trajectories for other stimulus conditions (see 'Fixed points' in Methods for further details on fixed point identification). State trajectories (colored lines) are colored according to stimulus orientation with θstimulus = 0 highlighted in red, starting from ‘x’ and ending with ‘▴’. g, Interpolation between inputs for memory (α = 0) and response (α = 1) periods. Middle: fixed points for 20 intermediate α values (x axis) projected into top two memory period PCs (as in c–f) (y and z axes) with memory α = 0 (left) and response α = 1 (right) fixed points and trajectories. h, Fixed points for input interpolation between memory (blue) and response (yellow) inputs. State trajectories are colored according to stimulus orientation. Same axes as c–f. All subpanels were generated from the same network with hyperparameters: 256 units, softplus activation, diagonal initialization.",
+        "tags": [
+          "神经网络",
+          "降维",
+          "轨迹"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11239504/#Fig1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/f7cd/11239504/7ca3499abc23/41593_2024_1668_Fig1_HTML.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2006.04439v4",
+    "paper": "Liquid Time-constant Networks",
+    "year": "2020",
+    "author": "Ramin Hasani et al.",
+    "journal": "arXiv",
+    "doi": "10.48550/arXiv.2006.04439",
+    "category": "网络与复杂系统",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2006.04439v4",
+    "version": "v4",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Trajectory’s latent space across hidden layers",
+        "caption": "Figure 1: Trajectory’s latent space becomes more complex as the input passes through hidden layers.",
+        "tags": [
+          "动力学",
+          "轨迹",
+          "降维"
+        ],
+        "paper_url": "https://arxiv.org/html/2006.04439v4#S4.F1",
+        "original": "https://arxiv.org/html/2006.04439v4/traj_ffn.png"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC9629744",
+    "paper": "A data-based large-scale model for primary visual cortex enables brain-like robust and versatile visual processing",
+    "year": "2022",
+    "author": "Guozhang Chen et al.",
+    "journal": "Science Advances",
+    "doi": "10.1126/sciadv.abq7592",
+    "category": "类脑计算与模型",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9629744/fullTextXML",
+    "pmcid": "PMC9629744",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "初级视觉皮层大规模模型",
+        "caption": "V1 model of (1). (A) The model consists of four classes of neurons on five layers. It comes together with a model for LGN, which transforms visual inputs into input currents to neurons in the V1 model. The LGN model receives visual input from an oval in the central part of an image (1). (B) The model contains one excitatory and three inhibitory neuron classes. Each dot denotes the position of a neuron. (C) The data-based base connection probabilities of (1) depend on the cell class to which the presynaptic (row labels) and postsynaptic neuron (column labels) belongs. White grid cells denote unknown values. (D) The base connection probability from (C) is multiplied according to (1) for any given pair of neurons by an exponentially decaying factor that depends on the lateral distance between them. Note that the illustrations in (A), (C), and (D) were created by us and derived from the publicly available data provided in (1). (E) Spike outputs of two randomly selected neurons from the V1 model for 10 trials with the same input (a trial of visual change detection task for natural images), using the noise model of (1). (F) Same as in (E) but for the version of the data-driven noise model with s = q = 2 that we used as default-noise model during testing. It causes substantially larger trial-to-trial variability.",
+        "tags": [
+          "视觉",
+          "网络结构",
+          "参数"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9629744/#F1",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e23a/9629744/8dc0debe0c5a/sciadv.abq7592-f1.jpg"
+      },
+      {
+        "id": "F2",
+        "label": "Fig. 2",
+        "figure_title": "视觉皮层模型的任务与输入",
+        "caption": "Illustration of the readout convention and the five visual processing tasks for which the V1 model was trained. (A) The visual stimuli for all five tasks were presented to the LGN model. Separate competing pools of pyramidal cells on L5 were chosen as readout neurons for each task. (B to E) Schematic diagrams and timings of five visual tasks (Materials and Methods). (B) In the fine orientation discrimination task, the network received a drifting grating with an orientation very close to 45°, and neurons in the corresponding readout pool had to fire if the orientation was larger than 45∘. (C) For the image classification task, the network received a handwritten sample of a digit from 0 to 9 from MNIST dataset, and the corresponding one of the 10 readout pools for this task had to fire stronger than the others (two samples for digits 7 and 6 are shown). (D) For the visual change detection task, a long sequence of images was presented, with gray screens in between. A corresponding readout pool had to become active during the response window if the most recent image differed from the preceding one. Both natural images and static gratings were used. (E) In the evidence accumulation task, seven cues were presented sequentially, and after a delay, a corresponding readout pool had to indicate through stronger firing whether most cues had been presented on the left or the right.",
+        "tags": [
+          "模型架构",
+          "视觉任务"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9629744/#F2",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/e23a/9629744/c818e99faa87/sciadv.abq7592-f2.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "PMC11420173",
+    "paper": "Encoding innate ability through a genomic bottleneck",
+    "year": "2024",
+    "author": "Sergey Shuvaev et al.",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "doi": "10.1073/pnas.2409160121",
+    "category": "类脑计算与模型",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11420173/fullTextXML",
+    "pmcid": "PMC11420173",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Simple rules can specify networks",
+        "caption": "Simple rules can specify networks. (A) A very simple nearest-neighbor wiring rule. (B) A somewhat more complex rule (“only connect to nearest neighbors of opposite color”) leads to a more complex network. (C) Network specification through a genomic bottleneck. The input to the genomic network (“g-network”) is a pair of neurons (pre- and postsynaptic) specified by binary strings. Each neuron has a unique label, consisting of a unique binary string. The two binary labels are passed through the g-network, which assigns the strength of the connection between the two neurons in the “p-network.” Because the number of parameters in the g-network is smaller than the number of parameters in the p-network, the g-network is effectively compressing the p-network. (D) G-networks seek to discover p-networks that both solve the problem well and are compressible.",
+        "tags": [
+          "网络结构",
+          "概念图"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11420173/#fig01",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/563e/11420173/92d7b7d2b9ee/pnas.2409160121fig01.jpg"
+      }
+    ]
+  },
+  {
+    "source_id": "arXiv-2307.08197v1",
+    "paper": "Towards Self-Assembling Artificial Neural Networks through Neural Developmental Programs",
+    "year": "2023",
+    "author": "Elias Najarro et al.",
+    "journal": "arXiv",
+    "doi": "10.48550/arXiv.2307.08197",
+    "category": "类脑计算与模型",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://arxiv.org/abs/2307.08197v1",
+    "version": "v1",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Neural Developmental Program approach for growing neural network",
+        "caption": "Figure 1: Neural Developmental Program approach for growing neural network. Each node state s is represented as an embedding vector. During the information aggregation phase, the graph propagates each node state s to its neighbors for n steps. Based on the updated nodes embedding \\hat{s}_{t+n}, the replication model —implemented as a MLP— determines which nodes will grow new nodes. Finally, if the target network is not unweighted, another MLP estimates the edge weights of each pair of nodes based on their concatenated embeddings; otherwise, edges are assigned a unitary weight. The resulting network is evaluated through an objective function, i.e. solving a task or having certain topological properties. The \\mathcal{NDP} is a distributed model that operates purely on local information.",
+        "tags": [
+          "流程",
+          "网络结构"
+        ],
+        "paper_url": "https://arxiv.org/html/2307.08197v1#S0.F1",
+        "original": "https://arxiv.org/pdf/2307.08197v1#page=2",
+        "pdf_crop": {
+          "page": 2,
+          "box": [
+            54.36,
+            60.839999999999996,
+            556.56,
+            215.28
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "source_id": "PMC6395010",
+    "paper": "Fast near-whole–brain imaging in adult Drosophila during responses to stimuli and behavior",
+    "year": "2019",
+    "author": "Sophie Aimon et al.",
+    "journal": "PLOS Biology",
+    "doi": "10.1371/journal.pbio.2006732",
+    "category": "脑图谱与成像",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "license_evidence": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395010/",
+    "pmcid": "PMC6395010",
+    "figures": [
+      {
+        "id": "F1",
+        "label": "Fig. 1",
+        "figure_title": "Imaging the brain of adult behaving flies using light field microscopy.",
+        "caption": "Imaging the brain of adult behaving flies using light field microscopy.A) Experimental setup. The fly is head fixed, and its tarsi are touching a ball. The light from the brain’s fluorescence goes through the objective, the microscope tube lens, a microlens array, and relay lenses onto the sensor of a high-speed sCMOS camera. Another camera in front of the fly records its behavior. B) Example of a light field deconvolution (fly’s genotype: nsyb-Gal4, UAS-ArcLight). Top: 2D light field image acquired in 5 ms—one camera acquisition period—with a 20x NA 1.0 objective. Bottom: anterior and posterior views (slightly tilted sideways) of the computationally reconstructed volume. 3D bar is 90 x 30 x 30 microns. See also S1–S3 Figs. NA, numerical aperture; nysb-Gal4, nSynaptobrevin-Gal4; sCMOS, scientific complementary metal-oxide-semiconductor.",
+        "tags": [
+          "实验装置",
+          "成像"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395010/#pbio.2006732.g001",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2979/6395010/11bef44ac1db/pbio.2006732.g001.jpg"
+      },
+      {
+        "id": "F3",
+        "label": "Fig. 3",
+        "figure_title": "Z-stack slices of the 3D map for all the components extracted using PCA/ICA.",
+        "caption": "Z-stack slices of the 3D map for all the components extracted using PCA/ICA.The maps from calcium activity (GCaMP6f) are compared with the maps obtained with an activity-independent fluorophore (GFP). Different colors are assigned randomly to different components. Note that the slice depth is larger when it is farther from the middle of the brain (see Methods section). See S10 and S11 Figs for maps aligned to an anatomical template and S12 Fig for examples of individual artifactual components. GCaMP6f data can be found on CNCRS.org (http://dx.doi.org/10.6080/K01J97ZN). CNCRS, Collaborative Research in Computational Neuroscience; GFP, green fluorescent protein; ICA, independent component analysis; PCA, principal component analysis.",
+        "tags": [
+          "显微",
+          "果蝇"
+        ],
+        "paper_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6395010/#pbio.2006732.g003",
+        "original": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/2979/6395010/816e36dded94/pbio.2006732.g003.jpg"
+      }
+    ]
+  }
+]
