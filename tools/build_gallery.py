@@ -258,10 +258,43 @@ def curated_figures():
     return figures
 
 
+def webp_preview_size(path):
+    try:
+        with path.open("rb") as image:
+            header = image.read(30)
+    except OSError:
+        return None
+    if header[:4] != b"RIFF" or header[8:12] != b"WEBP":
+        return None
+
+    # The first chunk carries the dimensions without decoding the image.
+    chunk = header[12:16]
+    if chunk == b"VP8X" and len(header) >= 30:
+        return 1 + int.from_bytes(header[24:27], "little"), 1 + int.from_bytes(header[27:30], "little")
+    if chunk == b"VP8L" and len(header) >= 25 and header[20] == 0x2F:
+        bits = int.from_bytes(header[21:25], "little")
+        return (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
+    if chunk == b"VP8 " and len(header) >= 30 and header[23:26] == b"\x9d\x01\x2a":
+        width = int.from_bytes(header[26:28], "little") & 0x3FFF
+        height = int.from_bytes(header[28:30], "little") & 0x3FFF
+        if width and height:
+            return width, height
+    return None
+
+
+def preview_sizes(figures):
+    return {
+        figure["image"]: size
+        for figure in figures
+        if (size := webp_preview_size(ROOT / figure["image"])) is not None
+    }
+
+
 def write_gallery_views(data):
     figures = data["figures"]
     (DATA_DIR / "figures.js").write_text(
-        "window.GALLERY_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n",
+        "window.GALLERY_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
+        "window.GALLERY_DATA.image_sizes = " + json.dumps(preview_sizes(figures), separators=(",", ":")) + ";\n",
         encoding="utf-8",
     )
     wall_dir = DOCS_DIR / "topics"
@@ -386,7 +419,8 @@ def write_local_gallery():
     figures = json.loads(manifest.read_text(encoding="utf-8"))["figures"]
     (local_dir / "figures.js").write_text(
         'window.GALLERY_DATA.image_prefix = "../";\n'
-        "window.GALLERY_DATA.local_figures = " + json.dumps(figures, ensure_ascii=False) + ";\n",
+        "window.GALLERY_DATA.local_figures = " + json.dumps(figures, ensure_ascii=False) + ";\n"
+        "window.GALLERY_DATA.local_image_sizes = " + json.dumps(preview_sizes(figures), separators=(",", ":")) + ";\n",
         encoding="utf-8",
     )
     page = (ROOT / "index.html").read_text(encoding="utf-8")

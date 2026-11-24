@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="从神经环路到类脑模型，积累有据可查的科研绘图参考。">
   <title>类脑计算科研图谱</title>
-  <link rel="stylesheet" href="assets/gallery.css?v=4">
-  <script defer src="data/figures.js"></script>
-  <script defer src="assets/gallery.js?v=3"></script>
+  <link rel="stylesheet" href="assets/gallery.css?v=5">
+  <script defer src="data/figures.js?v=2"></script>
+  <script defer src="assets/gallery.js?v=4"></script>
 </head>
 <body>
   <!-- Lucide icons, see assets/icon-licenses.txt. -->
@@ -25,6 +25,14 @@
     <symbol id="icon-close" viewBox="0 0 24 24"><path d="M18 6 6 18m0-12 12 12"/></symbol>
     <symbol id="icon-sliders" viewBox="0 0 24 24">
       <path d="M21 4h-7M10 4H3m18 8h-9M8 12H3m18 8h-5m-4 0H3M14 2v4m-6 4v4m8 4v4"/>
+    </symbol>
+    <symbol id="icon-masonry" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/>
+      <rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>
+    </symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+      <rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>
     </symbol>
   </svg>
 
@@ -87,18 +95,26 @@
           <button class="text-button" id="reset" type="button" aria-label="重置筛选" title="重置筛选" disabled>
             <svg class="icon" aria-hidden="true"><use href="#icon-reset"/></svg>
           </button>
-          <label class="sort-control">排序<select id="sort">
+          <label class="sort-control"><span>排序</span><select id="sort" aria-label="排序">
             <option value="curated">整理顺序</option>
             <option value="recent">较新论文</option>
             <option value="oldest">较早论文</option>
           </select></label>
+          <div class="layout-switch" role="group" aria-label="图墙布局">
+            <button type="button" data-layout="masonry" aria-pressed="true" aria-label="瀑布流" title="瀑布流">
+              <svg class="icon" aria-hidden="true"><use href="#icon-masonry"/></svg>
+            </button>
+            <button type="button" data-layout="grid" aria-pressed="false" aria-label="等高网格" title="等高网格">
+              <svg class="icon" aria-hidden="true"><use href="#icon-grid"/></svg>
+            </button>
+          </div>
         </div>
       </div>
       <div id="active-filters" class="active-filters" role="group" aria-label="已选筛选" hidden></div>
 
       <p class="notice" id="notice" hidden></p>
       <noscript><p class="notice">请启用 JavaScript 以浏览图例。</p></noscript>
-      <div class="figure-grid" id="grid"></div>
+      <div class="figure-grid" id="grid" data-layout="masonry"></div>
       <nav class="pager" id="pager" aria-label="图例分页" hidden>
         <button class="icon-button" id="previous-page" type="button" aria-label="上一页" title="上一页"><svg class="icon" aria-hidden="true"><use href="#icon-left"/></svg></button>
         <span id="page-count"></span>

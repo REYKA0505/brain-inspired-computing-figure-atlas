@@ -9,6 +9,7 @@
   }
 
   const figures = [...(data.local_figures ?? []), ...data.figures];
+  const imageSizes = { ...data.image_sizes, ...data.local_image_sizes };
   const imagePath = figure => `${data.image_prefix ?? ''}${figure.image}`;
   const workKey = figure => (figure.doi || figure.paper).toLowerCase();
   const pageSize = 24;
@@ -23,6 +24,10 @@
   const chipTemplate = byId('filter-chip').content.firstElementChild;
   const sort = byId('sort');
   const reset = byId('reset');
+  const grid = byId('grid');
+  const layoutButtons = document.querySelectorAll('.layout-switch button');
+  const layoutPreference = 'neuro-atlas-layout';
+  const masonryObserver = new ResizeObserver(packMasonry);
   const previousPage = byId('previous-page');
   const nextPage = byId('next-page');
   const previousFigure = byId('previous-figure');
@@ -134,9 +139,23 @@
     image.src = imagePath(figure);
   }
 
+  function setPreviewRatio(card, width, height) {
+    const ratio = width / height;
+    if (Number.isFinite(ratio) && ratio > 0) {
+      card.style.setProperty('--preview-ratio', Math.max(0.82, Math.min(3.2, ratio)));
+    }
+  }
+
   function makeCard(figure, index) {
     const card = cardTemplate.cloneNode(true);
     const preview = card.querySelector('.preview');
+    const image = preview.querySelector('img');
+    const size = imageSizes[figure.image];
+    if (size) {
+      setPreviewRatio(card, ...size);
+    } else {
+      image.addEventListener('load', () => setPreviewRatio(card, image.naturalWidth, image.naturalHeight), { once: true });
+    }
     preview.setAttribute('aria-label', `查看 ${figure.label}：${figure.figure_title}`);
     preview.addEventListener('click', () => showFigure(index));
     loadPreview(preview, figure);
@@ -154,10 +173,31 @@
     return card;
   }
 
+  function packMasonry() {
+    if (grid.dataset.layout !== 'masonry') return;
+    const style = getComputedStyle(grid);
+    const rowHeight = Number.parseFloat(style.gridAutoRows);
+    if (!rowHeight) return;
+    const gap = Number.parseFloat(style.columnGap);
+
+    // Measure every card before writing spans so grid placement keeps DOM order.
+    const spans = Array.from(grid.children, card => Math.ceil((card.getBoundingClientRect().height + gap) / rowHeight));
+    spans.forEach((span, index) => grid.children[index].style.setProperty('--masonry-span', span));
+  }
+
+  function setLayout(layout) {
+    grid.dataset.layout = layout;
+    for (const button of layoutButtons) button.setAttribute('aria-pressed', button.dataset.layout === layout);
+    packMasonry();
+  }
+
   function renderPage() {
     const offset = (page - 1) * pageSize;
     const cards = results.slice(offset, offset + pageSize).map((figure, index) => makeCard(figure, offset + index));
-    byId('grid').replaceChildren(...cards);
+    masonryObserver.disconnect();
+    grid.replaceChildren(...cards);
+    packMasonry();
+    for (const card of cards) masonryObserver.observe(card);
     const pageCount = Math.ceil(results.length / pageSize);
     byId('pager').hidden = pageCount < 2;
     byId('page-count').textContent = `${page} / ${pageCount}`;
@@ -218,6 +258,16 @@
 
   search.addEventListener('input', applyFilters);
   for (const control of [type, journal, sort]) control.addEventListener('change', applyFilters);
+  for (const button of layoutButtons) {
+    button.addEventListener('click', () => {
+      setLayout(button.dataset.layout);
+      try {
+        localStorage.setItem(layoutPreference, button.dataset.layout);
+      } catch {
+        // Storage is optional for offline browsing.
+      }
+    });
+  }
   filterPanel.addEventListener('keydown', event => {
     if (event.key === 'Escape' && filterPanel.open) {
       filterPanel.open = false;
@@ -257,5 +307,10 @@
   const requestedJournal = params.get('journal');
   if (topicCounts.has(requestedTopic)) topic = requestedTopic;
   if ([...journal.options].some(option => option.value === requestedJournal)) journal.value = requestedJournal;
+  try {
+    if (localStorage.getItem(layoutPreference) === 'grid') setLayout('grid');
+  } catch {
+    // Use the default layout when storage is unavailable.
+  }
   applyFilters();
 })();
