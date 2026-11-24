@@ -21,8 +21,13 @@ assets/             样式、交互脚本和图片预览
 data/               来源清单、网页数据和采集记录
 docs/               主题图墙与外部资源索引
   topics/           各研究主题的 Obsidian 图墙
+skills/             Agent 贡献指南
 tools/              图例采集与图库构建脚本
 ```
+
+## 贡献资源
+
+把指南和论文标题、DOI 或站外资源网址交给你的 Agent。它可以核验图件许可、重建图库，并按你的要求从个人 fork 提交 PR，供维护者审核。[Agent 贡献指南](skills/atlas-resource-contribution/SKILL.md)
 
 ## 维护
 
