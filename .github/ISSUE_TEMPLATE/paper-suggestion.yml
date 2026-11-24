@@ -1,0 +1,12 @@
+name: 论文投递
+description: 提交一篇推荐收录的论文。
+title: "[论文投递]"
+body:
+  - type: input
+    id: paper
+    attributes:
+      label: 论文标题、DOI 或链接
+      description: 填写任意一项即可。
+      placeholder: 例如 10.1038/s41467-017-01827-3
+    validations:
+      required: true

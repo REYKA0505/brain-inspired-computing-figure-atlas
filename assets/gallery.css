@@ -43,6 +43,8 @@ button:disabled { cursor: default; }
 .site-nav a { color: var(--muted); text-decoration: none; white-space: nowrap; }
 .site-nav a:hover { color: var(--accent); text-decoration: underline; }
 .site-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
+.site-nav .submission-link { display: inline-flex; align-items: center; gap: 3px; color: var(--accent); font-weight: 700; }
+.submission-link .icon { width: 13px; height: 13px; }
 
 .masthead { background: #eef3f1; border-bottom: 1px solid #dce5e2; }
 .masthead-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 27px; }
@@ -176,8 +178,8 @@ dialog::backdrop { background: rgb(21 33 36 / 62%); }
 
 @media (max-width: 780px) {
   .shell { width: calc(100% - 32px); }
-  .site-header-inner { min-height: 52px; }
-  .site-nav { gap: 13px; font-size: 12px; }
+  .site-header-inner { min-height: 52px; padding-block: 5px; }
+  .site-nav { flex-wrap: wrap; justify-content: flex-end; gap: 4px 13px; font-size: 12px; }
   .masthead-inner { flex-direction: column; align-items: flex-start; gap: 14px; padding-block: 20px; }
   .masthead h1 { font-size: 30px; }
   .masthead p { margin-top: 5px; font-size: 13px; }
@@ -210,7 +212,7 @@ dialog::backdrop { background: rgb(21 33 36 / 62%); }
   .wordmark-icon { width: 29px; height: 29px; }
   .wordmark-icon .icon { width: 19px; height: 19px; }
   .site-header-inner { gap: 8px; }
-  .site-nav { gap: 9px; }
+  .site-nav { column-gap: 9px; }
   .masthead h1 { font-size: 28px; }
   .figure-grid { grid-template-columns: minmax(0, 1fr); }
   .detail-header { padding-inline: 10px; }
