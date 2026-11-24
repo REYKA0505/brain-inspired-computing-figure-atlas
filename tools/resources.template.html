@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="论文图集、科研插画、类脑计算论文与图谱资料。">
+  <title>科研绘图资源 | 类脑计算科研图谱</title>
+  <link rel="stylesheet" href="assets/gallery.css?v=2">
+</head>
+<body>
+  <!-- Lucide icons, see assets/icon-licenses.txt. -->
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="icon-brain" viewBox="0 0 24 24">
+      <path d="M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-8 1a4.17 4.17 0 0 1-3 4m7-5V5a2 2 0 0 1 2-2M6 18a4 4 0 0 1-2-7.465m2.004-5.41a4 4 0 0 0-2.526 5.77m2.816-4.601A3 3 0 1 1 12 5v13a4 4 0 1 1-7.967-.518"/>
+      <circle cx="16" cy="13" r=".5" fill="currentColor"/><circle cx="18" cy="3" r=".5" fill="currentColor"/>
+      <circle cx="20" cy="21" r=".5" fill="currentColor"/><circle cx="20" cy="8" r=".5" fill="currentColor"/>
+    </symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="shell site-header-inner">
+      <a class="wordmark" href="index.html" aria-label="类脑计算科研图谱首页">
+        <span class="wordmark-icon"><svg class="icon" aria-hidden="true"><use href="#icon-brain"/></svg></span>
+        <span>NEURO FIGURE ATLAS</span>
+      </a>
+      <nav class="site-nav" aria-label="站点导航">
+        <a href="index.html">图库</a>
+        <a href="resources.html" aria-current="page">站外资源</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="masthead" aria-labelledby="resources-title">
+      <div class="shell masthead-inner">
+        <div>
+          <h1 id="resources-title">科研绘图资源</h1>
+          <p>论文图集、科研插画、类脑计算论文与图谱资料</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="shell workspace">
+      <aside class="topics" aria-label="资源分类">
+        <nav class="resource-menu" aria-label="资源目录">
+          $menu
+        </nav>
+      </aside>
+
+      <div class="resource-content">
+        $sections
+        <section id="topics" class="resource-section">
+          <h2>主题图墙</h2>
+          <div class="resource-themes">
+            $topics
+          </div>
+        </section>
+        <section id="sources" class="resource-section">
+          <h2>图谱资料</h2>
+          <div class="resource-shortcuts">
+            <a href="data/sources.json" target="_blank" rel="noopener">来源清单（JSON）</a>
+            <a href="data/curated-figures.json" target="_blank" rel="noopener">选录清单（JSON）</a>
+            <a href="docs/index.md">Obsidian 图墙索引</a>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer-inner">
+      <p>站外图件的复用条件以原始站点或论文的许可标注为准。</p>
+      <p><a href="index.html">返回图库</a></p>
+    </div>
+  </footer>
+</body>
+</html>

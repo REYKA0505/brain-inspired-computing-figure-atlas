@@ -13,6 +13,7 @@ import urllib.error
 import urllib.request
 from datetime import date
 from pathlib import Path
+from string import Template
 from subprocess import run
 from tempfile import TemporaryDirectory
 from urllib.parse import quote, unquote, urlsplit
@@ -291,11 +292,10 @@ def write_gallery_views(data):
             ]
         (wall_dir / filename).write_text("\n".join(lines) + "\n", encoding="utf-8")
     paper_count = len({fig["doi"].lower() for fig in figures})
-    nature_count = len({fig["doi"].lower() for fig in figures if fig["journal"].lower() == "nature"})
     lines = [
         "# 类脑计算科研图谱 · 图墙", "",
         "[项目首页](../README.md) · [网页图库](../index.html) · [资源索引](resources.md)", "",
-        f"{data['created']} 收录快照包含 {len(figures)} 张图例，来自 {paper_count} 篇论文，其中 {nature_count} 篇为 Nature 正刊。", "",
+        f"{data['created']} 收录快照包含 {len(figures)} 张图例，来自 {paper_count} 篇论文。", "",
         "## 研究主题", "",
     ]
     lines += [f"- [{category}](topics/{filename}) · {count} 张" for category, filename, count in links]
@@ -303,7 +303,86 @@ def write_gallery_views(data):
         "", "[来源清单](../data/sources.json)记录每张图例的 DOI、图号、图注、原图链接及文章级许可。", "",
     ]
     (DOCS_DIR / "index.md").write_text("\n".join(lines), encoding="utf-8")
+    write_resources(figures)
     write_local_gallery()
+
+
+def resource_text(parts, as_html):
+    text = []
+    for part in parts:
+        if isinstance(part, str):
+            text.append(html.escape(part) if as_html else part)
+            continue
+        link = part["url"]
+        if urlsplit(link).scheme != "https":
+            raise ValueError(f"Expected HTTPS resource URL: {link}")
+        label = part["label"]
+        if as_html:
+            icon = '<svg class="icon" aria-hidden="true"><use href="#icon-link"/></svg>'
+            text.append(f'<a class="resource-link" href="{html.escape(link)}" target="_blank" rel="noopener noreferrer">{html.escape(label)}{icon}</a>')
+        else:
+            text.append(f"[{label}]({link})")
+    return "".join(text)
+
+
+def write_resources(figures):
+    groups = json.loads((DATA_DIR / "resources.json").read_text(encoding="utf-8"))
+    markdown = [
+        "# 科研图片资源索引", "",
+        "收录可浏览或检索科研论文图、学术图例及科研插画的网站与图集。资源类型不同，具体内容和许可请查看各自页面。", "",
+        "[网页资源导航](../resources.html) · [网页图库](../index.html) · [主题图墙](index.md)", "",
+    ]
+    menu = []
+    sections = []
+    for group in groups:
+        section_id = html.escape(group["id"])
+        title = html.escape(group["title"])
+        menu.append(f'<a href="#{section_id}">{title}</a>')
+        section = [f'<section id="{section_id}" class="resource-section">', f"<h2>{title}</h2>"]
+        markdown.extend([f"## {group['title']}", ""])
+        if section_id == "papers":
+            section.extend([
+                '<div class="resource-shortcuts">',
+                '<a href="index.html?journal=arXiv">图谱中的 arXiv 图件</a>',
+                '<a href="index.html?journal=bioRxiv">图谱中的 bioRxiv 图件</a>',
+                "</div>",
+            ])
+            markdown.extend([
+                "[arXiv 图件](../index.html?journal=arXiv) · [bioRxiv 图件](../index.html?journal=bioRxiv)", "",
+            ])
+        elif section_id == "illustrations":
+            markdown.extend(["本节主要收录示意插画和图标。", ""])
+        markdown.extend(["| 资源 | 收录内容 |", "| --- | --- |"])
+        section.append('<ul class="resource-list">')
+        for row in group["rows"]:
+            name, description = row["name"], row["description"]
+            section.extend([
+                '<li class="resource-row">',
+                f'  <div class="resource-name">{resource_text(name, True)}</div>',
+                f"  <p>{resource_text(description, True)}</p>",
+                "</li>",
+            ])
+            markdown.append(f"| {resource_text(name, False)} | {resource_text(description, False)} |")
+        section.extend(["</ul>", "</section>"])
+        sections.append("\n".join(section))
+        markdown.append("")
+    menu.extend(['<a href="#topics">主题图墙</a>', '<a href="#sources">图谱资料</a>'])
+    topics = []
+    for category in SELECTED:
+        selected = [fig for fig in figures if fig["category"] == category]
+        if selected:
+            thumb = html.escape(selected[0]["image"])
+            topics.append(
+                f'<a class="resource-theme" href="index.html?topic={quote(category)}">'
+                f'<img src="{thumb}" alt="" width="70" height="44" loading="lazy">'
+                f'<span>{html.escape(category)}</span><span class="topic-count">{len(selected)} 张</span></a>'
+            )
+    markdown.extend(["## 来源与许可", "", "外部图集和素材站中的作品许可见原始页面。[来源清单](../data/sources.json) · [选录清单](../data/curated-figures.json)", ""])
+    (DOCS_DIR / "resources.md").write_text("\n".join(markdown), encoding="utf-8")
+    template = Template((ROOT / "tools/resources.template.html").read_text(encoding="utf-8"))
+    (ROOT / "resources.html").write_text(template.substitute(
+        menu="\n          ".join(menu), sections="\n\n".join(sections), topics="\n            ".join(topics),
+    ), encoding="utf-8")
 
 
 def write_local_gallery():
@@ -321,10 +400,12 @@ def write_local_gallery():
     page = (ROOT / "index.html").read_text(encoding="utf-8")
     page = re.sub(r'((?:href|src)=")(assets/|data/|docs/)', r'\1../\2', page)
     page = page.replace('<head>', '<head>\n  <meta name="robots" content="noindex">', 1)
-    page = page.replace('<script defer src="../assets/gallery.js">', '<script defer src="figures.js"></script>\n  <script defer src="../assets/gallery.js">', 1)
+    gallery_script = '<script defer src="../assets/gallery.js'
+    page = page.replace(gallery_script, '<script defer src="figures.js"></script>\n  ' + gallery_script, 1)
     page = page.replace('<title>类脑计算科研图谱</title>', '<title>类脑计算科研图谱 · 本地全量</title>', 1)
     page = page.replace('id="atlas-title">类脑计算科研图谱<', 'id="atlas-title">类脑计算科研图谱 · 本地全量<', 1)
-    page = page.replace('<a href="../docs/resources.md">资源索引</a>', '<a href="audit.md">素材核验记录</a>', 1)
+    page = page.replace('href="resources.html#topics"', 'href="../resources.html#topics"', 1)
+    page = page.replace('<a href="resources.html">站外资源</a>', '<a href="audit.md">素材核验记录</a>', 1)
     (local_dir / "index.html").write_text(page, encoding="utf-8")
 
 

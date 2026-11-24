@@ -1,0 +1,246 @@
+[
+  {
+    "id": "figures",
+    "title": "论文图像与学术图集",
+    "rows": [
+      {
+        "name": [
+          {
+            "label": "SCI Figure Gallery",
+            "url": "https://chutj.github.io/gallery/"
+          }
+        ],
+        "description": [
+          "真实论文图集，提供图型、关键词、图注、来源和许可等信息。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "Plottie",
+            "url": "https://plottie.art/"
+          }
+        ],
+        "description": [
+          "论文图像检索与浏览平台，可按关键词、图型和来源查看图例。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "PaperFigure",
+            "url": "https://paperfigure.net/"
+          }
+        ],
+        "description": [
+          "论文图片检索平台，主要收录计算机科学和人工智能领域的图例。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "Awesome Academic Figures",
+            "url": "https://doczbs.github.io/Awesome-Academic-Figures/"
+          },
+          " · ",
+          {
+            "label": "项目主页",
+            "url": "https://github.com/DocZbs/Awesome-Academic-Figures"
+          }
+        ],
+        "description": [
+          "学术论文图像合集，包含人工智能、机器人、计算机视觉等方向的图例。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "Top-Conf Paper Figure Gallery",
+            "url": "https://qwdwqfwq.github.io/topconf-paper-figure-gallery/"
+          },
+          " · ",
+          {
+            "label": "项目主页",
+            "url": "https://github.com/qwdwqfwq/topconf-paper-figure-gallery"
+          }
+        ],
+        "description": [
+          "汇集人工智能与计算机领域会议论文的 Figure 1 和 Teaser 图。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "Awesome Scientific Figure",
+            "url": "https://nehsgnail.github.io/awesome-scientific-figure/"
+          },
+          " · ",
+          {
+            "label": "项目主页",
+            "url": "https://github.com/nehSgnaiL/awesome-scientific-figure"
+          }
+        ],
+        "description": [
+          "按地图、散点图、箱线图等类别整理的论文图例。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "illustrations",
+    "title": "科研插画与素材图",
+    "rows": [
+      {
+        "name": [
+          {
+            "label": "SciDraw",
+            "url": "https://scidraw.io/"
+          }
+        ],
+        "description": [
+          "神经科学、实验动物与行为研究相关的插画和示意素材。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "BioIcons",
+            "url": "https://bioicons.com/"
+          }
+        ],
+        "description": [
+          "可检索的生命科学图标与插画素材。"
+        ]
+      },
+      {
+        "name": [
+          {
+            "label": "Servier Medical Art",
+            "url": "https://smart.servier.com/"
+          }
+        ],
+        "description": [
+          "医学和生命科学插画素材库。"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "papers",
+    "title": "类脑计算预印本",
+    "rows": [
+      {
+        "name": [
+          "脉冲网络学习"
+        ],
+        "description": [
+          "FMI Basel 与巴塞尔大学的",
+          {
+            "label": "代理梯度分析",
+            "url": "https://arxiv.org/abs/2404.14964v3"
+          },
+          "，覆盖梯度示意、闭合路径检验和分类结果。"
+        ]
+      },
+      {
+        "name": [
+          "循环网络训练"
+        ],
+        "description": [
+          "哥伦比亚大学的",
+          {
+            "label": "随机反馈学习",
+            "url": "https://www.biorxiv.org/content/10.1101/458570v1"
+          },
+          "和剑桥大学、纽约大学团队的",
+          {
+            "label": "长时依赖任务训练",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10592728/"
+          },
+          "。"
+        ]
+      },
+      {
+        "name": [
+          "神经环路与决策"
+        ],
+        "description": [
+          {
+            "label": "Chen 等人的循环网络策略模型",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13104915/"
+          },
+          "和 IBL 团队的",
+          {
+            "label": "单神经元内在时间尺度",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12407892/"
+          },
+          "。"
+        ]
+      },
+      {
+        "name": [
+          "连接组与脑成像"
+        ],
+        "description": [
+          {
+            "label": "MICrONS 视觉皮层连接组",
+            "url": "https://www.biorxiv.org/content/10.1101/2021.07.28.454025v2"
+          },
+          "展示成像和神经元重建流程，",
+          {
+            "label": "Natural Scenes Dataset",
+            "url": "https://www.biorxiv.org/content/10.1101/2021.02.22.432340v1"
+          },
+          "展示 fMRI 去噪、空间分辨率与模型预测。"
+        ]
+      },
+      {
+        "name": [
+          "神经形态硬件"
+        ],
+        "description": [
+          "TU Dresden 与曼彻斯特大学的 ",
+          {
+            "label": "SpiNNaker2",
+            "url": "https://arxiv.org/abs/2607.24396v1"
+          },
+          "，以及英特尔实验室等团队的 ",
+          {
+            "label": "Loihi 2",
+            "url": "https://arxiv.org/abs/2503.18002v2"
+          },
+          "。"
+        ]
+      },
+      {
+        "name": [
+          "基准评测"
+        ],
+        "description": [
+          {
+            "label": "NeuroBench",
+            "url": "https://arxiv.org/abs/2304.04640v5"
+          },
+          " 联合团队的评测系统分类和布置图。"
+        ]
+      },
+      {
+        "name": [
+          "延伸阅读"
+        ],
+        "description": [
+          {
+            "label": "SpikingJelly",
+            "url": "https://arxiv.org/abs/2310.16620"
+          },
+          " 的脉冲网络软件生态示例，",
+          {
+            "label": "Winding 等人的昆虫脑连接组",
+            "url": "https://www.biorxiv.org/content/10.1101/2022.11.28.516756v1"
+          },
+          " 展示跨尺度连接与回路布局。"
+        ]
+      }
+    ]
+  }
+]

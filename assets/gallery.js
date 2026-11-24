@@ -69,8 +69,6 @@
   }
   byId('figure-count').textContent = figures.length.toLocaleString();
   byId('paper-count').textContent = new Set(figures.map(workKey)).size.toLocaleString();
-  byId('nature-count').textContent = new Set(figures.filter(figure => figure.journal.toLowerCase() === 'nature')
-    .map(workKey)).size.toLocaleString();
   byId('snapshot-date').dateTime = data.created;
   byId('snapshot-date').textContent = data.created;
 
@@ -204,5 +202,10 @@
     }
   });
 
+  const params = new URLSearchParams(location.search);
+  const requestedTopic = params.get('topic');
+  const requestedJournal = params.get('journal');
+  if (topicCounts.has(requestedTopic)) topic = requestedTopic;
+  if ([...journal.options].some(option => option.value === requestedJournal)) journal.value = requestedJournal;
   applyFilters();
 })();

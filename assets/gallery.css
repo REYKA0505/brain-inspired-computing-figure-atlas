@@ -42,12 +42,13 @@ button:disabled { cursor: default; }
 .site-nav { display: flex; align-items: center; gap: 22px; }
 .site-nav a { color: var(--muted); text-decoration: none; white-space: nowrap; }
 .site-nav a:hover { color: var(--accent); text-decoration: underline; }
+.site-nav a[aria-current="page"] { color: var(--accent); font-weight: 700; }
 
 .masthead { background: #eef3f1; border-bottom: 1px solid #dce5e2; }
 .masthead-inner { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding-block: 27px; }
 .masthead h1 { font-size: 36px; line-height: 1.2; font-weight: 750; color: #193638; overflow-wrap: anywhere; }
 .masthead p { margin-top: 10px; color: var(--muted); }
-.atlas-stats { display: grid; grid-template-columns: repeat(3, minmax(94px, 1fr)); }
+.atlas-stats { display: grid; grid-template-columns: repeat(2, minmax(94px, 1fr)); }
 .atlas-stats div { display: flex; flex-direction: column-reverse; gap: 3px; padding-inline: 20px; border-left: 1px solid #cfdcda; }
 .atlas-stats dd { font-size: 26px; font-weight: 720; line-height: 1.1; color: #184c44; font-variant-numeric: tabular-nums; }
 .atlas-stats dt { font-size: 12px; color: var(--muted); white-space: nowrap; }
@@ -122,6 +123,26 @@ button:disabled { cursor: default; }
 .site-footer-inner { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding-block: 16px; }
 .site-footer-inner p:last-child { display: flex; gap: 14px; flex-wrap: wrap; white-space: nowrap; }
 
+.resource-menu { display: grid; gap: 3px; }
+.resource-menu a { padding: 7px 10px; color: var(--muted); text-decoration: none; border-radius: 5px; }
+.resource-menu a:hover, .resource-menu a:focus-visible { background: var(--accent-wash); color: var(--accent); }
+.resource-content { width: 100%; max-width: 1010px; min-width: 0; }
+.resource-section + .resource-section { margin-top: 30px; }
+.resource-section h2 { font-size: 21px; margin-bottom: 10px; }
+.resource-list { margin: 0; padding: 0; list-style: none; border-block: 1px solid var(--line); }
+.resource-row { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2fr); gap: 6px 20px; padding: 13px 0; }
+.resource-row + .resource-row { border-top: 1px solid var(--line); }
+.resource-name, .resource-row p, .resource-shortcuts { overflow-wrap: anywhere; }
+.resource-name { color: #223036; font-weight: 670; }
+.resource-row p { color: var(--muted); }
+.resource-link { display: inline; }
+.resource-link .icon { width: 13px; height: 13px; vertical-align: -2px; margin-inline-start: 3px; }
+.resource-shortcuts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-block: 8px 12px; }
+.resource-themes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; margin-block: 8px 0; border-top: 1px solid var(--line); }
+.resource-theme { display: flex; align-items: center; gap: 10px; min-width: 0; min-height: 64px; padding-block: 8px; border-bottom: 1px solid var(--line); text-decoration: none; }
+.resource-theme img { width: 70px; height: 44px; object-fit: contain; flex: none; background: var(--white); border: 1px solid var(--line); border-radius: 4px; }
+.resource-theme .topic-count { margin-inline-start: auto; flex: none; }
+
 dialog { width: min(1200px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 1px solid #bccbd0; border-radius: 8px; background: var(--white); color: inherit; overflow: auto; }
 dialog::backdrop { background: rgb(21 33 36 / 62%); }
 .detail-header { position: sticky; z-index: 2; top: 0; display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 10px 14px 10px 18px; border-bottom: 1px solid var(--line); background: var(--white); }
@@ -163,6 +184,7 @@ dialog::backdrop { background: rgb(21 33 36 / 62%); }
   .atlas-stats div:first-child { padding-left: 0; border-left: 0; }
   .atlas-stats dd { font-size: 22px; }
   .workspace { display: block; padding-block: 14px 28px; }
+  .resource-menu { display: flex; flex-wrap: wrap; gap: 2px 8px; }
   .topics { position: static; padding: 0; border: 0; margin-bottom: 12px; }
   .topics h2 { margin: 0; }
   .topic-list { display: flex; gap: 5px; overflow-x: auto; padding: 5px 3px; scrollbar-width: thin; }
@@ -176,6 +198,7 @@ dialog::backdrop { background: rgb(21 33 36 / 62%); }
 }
 
 @media (max-width: 560px) {
+  .resource-row, .resource-themes { grid-template-columns: minmax(0, 1fr); }
   .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
   .search-control { grid-column: 1 / -1; }
   .figure-grid { gap: 11px; }

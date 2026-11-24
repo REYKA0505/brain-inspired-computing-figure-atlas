@@ -6,14 +6,15 @@
 
 ## 浏览
 
-- **网页图库**　下载仓库后在浏览器打开 [index.html](index.html)，可离线筛选和放大图例。
+- **网页图库**　[打开在线图库](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/)。下载仓库后，也可在浏览器打开 [index.html](index.html) 离线筛选和放大图例。
 - **Obsidian 图墙**　在 Obsidian 中打开项目目录，从[图墙索引](docs/index.md)按研究主题读图。
-- **站外资源**　[资源索引](docs/resources.md)收录论文图集、图片检索平台和科研插画素材库。
+- **站外资源**　[打开在线资源导航](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/resources.html)浏览论文图集、科研插画和预印本。仓库内也提供 [Markdown 资源索引](docs/resources.md)。
 
 ## 目录
 
 ```text
 index.html          网页图库入口
+resources.html      网页资源导航
 assets/             样式、交互脚本和图片预览
   images/           WebP 图例
 data/               来源清单、网页数据和采集记录
@@ -25,6 +26,8 @@ tools/              图例采集与图库构建脚本
 ## 维护
 
 现有快照以 [data/sources.json](data/sources.json) 为准。编辑图例元数据后，可在项目根目录离线重建网页数据和图墙。
+
+站外链接维护在 [data/resources.json](data/resources.json)。离线重建会同步更新网页资源导航和 Markdown 索引。
 
 ```bash
 python3 tools/build_gallery.py --from-manifest
