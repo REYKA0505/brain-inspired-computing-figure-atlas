@@ -9,7 +9,7 @@
 - **网页图库**　[打开在线图库](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/)。下载仓库后，也可在浏览器打开 [index.html](index.html) 离线筛选和放大图例。
 - **Obsidian 图墙**　在 Obsidian 中打开项目目录，从[图墙索引](docs/index.md)按研究主题读图。
 - **站外资源**　[打开在线资源导航](https://reyka0505.github.io/brain-inspired-computing-figure-atlas/resources.html)浏览论文图集和科研插画。仓库内也提供 [Markdown 资源索引](docs/resources.md)。
-- **论文投递**　登录 GitHub 后填写论文标题、DOI 或链接中的任意一项。[投递论文](https://github.com/REYKA0505/brain-inspired-computing-figure-atlas/issues/new?template=paper-suggestion.yml)
+- **资源补充**　登录 GitHub 后填写论文标题、DOI 或链接中的任意一项。[资源补充](https://github.com/REYKA0505/brain-inspired-computing-figure-atlas/issues/new?template=paper-suggestion.yml)
 
 ## 目录
 
@@ -26,7 +26,7 @@ tools/              图例采集与图库构建脚本
 
 ## 维护
 
-定期检查待处理投递。核对论文版本、图件和许可后更新图库，处理完成后关闭对应 Issue。[待处理投递](https://github.com/REYKA0505/brain-inspired-computing-figure-atlas/issues?q=is%3Aissue%20is%3Aopen%20in%3Atitle%20%E8%AE%BA%E6%96%87%E6%8A%95%E9%80%92)
+定期查看资源补充建议。核对论文版本、图件和许可后更新图库，处理完成后关闭对应 Issue。[查看待处理列表](https://github.com/REYKA0505/brain-inspired-computing-figure-atlas/issues?q=is%3Aissue%20is%3Aopen)
 
 现有快照以 [data/sources.json](data/sources.json) 为准。编辑图例元数据后，可在项目根目录离线重建网页数据和图墙。
 

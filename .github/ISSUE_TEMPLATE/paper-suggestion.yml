@@ -1,6 +1,6 @@
-name: 论文投递
-description: 提交一篇推荐收录的论文。
-title: "[论文投递]"
+name: 资源补充
+description: 推荐适合图库收录的论文。
+title: "[资源补充]"
 body:
   - type: input
     id: paper
